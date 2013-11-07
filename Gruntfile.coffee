@@ -58,7 +58,7 @@ module.exports = (grunt) ->
         browsers: ['PhantomJS']
         reporters: 'dots'
       unit:
-        browsers: ['ChromeCanary']
+        browsers: ['']
       continuous:
         singleRun: true
 
