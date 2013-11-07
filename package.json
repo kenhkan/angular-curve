@@ -21,7 +21,7 @@
     "karma": "~0.9.0",
     "brunch": "~1.7.10",
     "javascript-brunch": "~1.7.0",
-    "coffee-script-brunch": "~1.7.2",
+    "coffee-script-brunch": "https://github.com/kenhkan/coffee-script-brunch/archive/master.tar.gz",
     "css-brunch": "~1.7.0",
     "clean-css-brunch": "~1.7.1",
     "stylus-brunch": "~1.7.0",

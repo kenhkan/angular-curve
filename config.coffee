@@ -44,3 +44,5 @@ exports.config =
       single_file_name: 'templates.js'
     process_env:
       raw: true
+    coffeescript:
+      bare: false
