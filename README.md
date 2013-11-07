@@ -36,8 +36,8 @@ Easy as 1-2-3-4-5:
 2. Replace `$APP_NAME` with your app name. This will be automated
    in a setup script in the future.
 3. Set the environment variable `APP_NAME` to your app's name
-4. Run `grunt` to get Karma running, watching for file changes, and a Harp
-   server running in the background
+4. Run `grunt` to get Karma running, watching for file changes, and a server
+   running in the background
 5. Open `localhost:3333` in the newly Karma-opened browser to view your app
 
 ### `grunt`
@@ -74,7 +74,7 @@ See [version bumping](https://github.com/vojtajina/grunt-bump)
 After having set up the project, the file structure would look like:
 
     app/ -> Anything specific to the app goes here
-    app/assets/ -> Anything here is copied over to top-level directory as-is
+    app/assets/ -> Anything here is copied over to top-level directory as-is.
     app/common/ -> By convention anything that's shared across controllers
     app/application.coffee -> The top-level ApplicationController
     app/application.spec.coffee -> The spec for ApplicationController
@@ -132,7 +132,7 @@ value from `process.env[<name-here>]` as a replacement.
 
 ### App settings
 
-Open up `app/404.jade` and update the following to your app's settings:
+Open up `app/index.jade` and update the following to your app's settings:
 
 * APP_NAME: the name of the app that will be passed to AngularJS
 * TWITTER_HANDLE: ditto

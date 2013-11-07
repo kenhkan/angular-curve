@@ -28,10 +28,6 @@ exports.config =
       joinTo:
         'app.css': /^(app|bower_components|vendor)/
 
-    templates:
-      joinTo:
-        'templates.js': /\.jade$/
-
   plugins:
     process_env:
       raw: true
