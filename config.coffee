@@ -24,7 +24,7 @@ exports.config =
           'bower_components/jquery/jquery.js'
           'bower_components/angular/angular.js'
           # Entry point
-          'app/main.coffee'
+          'app/index.coffee'
         ]
 
     stylesheets:
