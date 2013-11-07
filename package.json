@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "bower": "~1.2.7",
-    "harp": "~0.9.3",
     "karma": "~0.9.0",
     "brunch": "~1.7.10",
     "javascript-brunch": "~1.7.0",

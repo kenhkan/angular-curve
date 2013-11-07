@@ -65,7 +65,7 @@ module.exports = (grunt) ->
     # Concurrently run watch and server
     concurrent:
       options:
-        limit: 4
+        limit: 3
         logConcurrentOutput: true
       # When developing, just run the server and watch for changes
       develop: [
@@ -75,8 +75,6 @@ module.exports = (grunt) ->
         'exec:brunchWatch'
         # Run tests on change
         'watch:test'
-        # Run local web server
-        'exec:harpServer'
       ]
 
     ## Execute arbitrary commands
@@ -93,20 +91,13 @@ module.exports = (grunt) ->
         cmd: 'node_modules/.bin/brunch build -P'
       # Watch for changes for re-assembly
       brunchWatch:
-        cmd: 'node_modules/.bin/brunch watch'
-      # Run Harp server
-      harpServer:
-        cmd: "node_modules/.bin/harp server #{buildDir}"
-      # Kill the harp server and force exit peacefully no matter what
-      harpKill:
-        cmd: 'etc/kill_harp.sh'
+        cmd: 'node_modules/.bin/brunch watch --server'
 
   ## Build tasks
 
   # Usually you just want to run `grunt` to enter development mode
   grunt.registerTask 'default', [
     'init'
-    'exec:harpKill'
     'concurrent:develop'
   ]
 
