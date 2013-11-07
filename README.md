@@ -1,4 +1,4 @@
-# Worry-free AngularJS Development Stack <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-brunch.png)](https://david-dm.org/kenhkan/ng-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-brunch.png)](http://waffle.io/kenhkan/ng-brunch)
+# Setup-free AngularJS Development Stack <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-brunch.png)](https://david-dm.org/kenhkan/ng-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-brunch.png)](http://waffle.io/kenhkan/ng-brunch)
 
 You should be able to develop AngularJS without having to set anything up. This
 is the only AngularJS development stack you will ever need!
