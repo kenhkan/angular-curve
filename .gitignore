@@ -1,0 +1,5 @@
+*.sw*
+*~
+/node_modules
+/bower_components
+/public

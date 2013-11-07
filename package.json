@@ -1,0 +1,45 @@
+{
+  "name": "boilerplate",
+  "version": "0.0.0",
+  "description": "Description",
+  "homepage": "https://github.com/kenhkan/hb-angular",
+  "author": "Kenneth Kan <kenhkan@gmail.com>",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://github.com/kenhkan/hb-angular/blob/master/LICENSE"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "node_modules/.bin/brunch watch --server",
+    "test": "node_modules/.bin/karma start etc/karma.conf.js"
+  },
+  "dependencies": {
+    "bower": "~1.2.7",
+    "harp": "~0.9.3",
+    "karma": "~0.9.0",
+    "brunch": "~1.7.10",
+    "javascript-brunch": "~1.7.0",
+    "coffee-script-brunch": "~1.7.2",
+    "css-brunch": "~1.7.0",
+    "clean-css-brunch": "~1.7.1",
+    "stylus-brunch": "~1.7.0",
+    "ngmin-uglify-js-brunch": "~1.7.2",
+    "auto-reload-brunch": "~1.7.0",
+    "grunt": "~0.4.1",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-watch": "~0.5.0",
+    "grunt-karma": "~0.5.0",
+    "grunt-conventional-changelog": "~0.1.1",
+    "grunt-bump": "0.0.6",
+    "grunt-exec": "0.4.2",
+    "grunt-concurrent": "~0.4.1",
+    "jshint-brunch": "~1.6.0",
+    "coffeelint-brunch": "~1.5.0",
+    "process-env-brunch": "https://github.com/kenhkan/process-env-brunch/archive/master.tar.gz",
+    "jade": "~0.35.0",
+    "jade-angularjs-brunch": "https://github.com/kenhkan/jade-angularjs-brunch/archive/master.tar.gz"
+  }
+}
