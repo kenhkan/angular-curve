@@ -39,6 +39,7 @@
     "coffeelint-brunch": "~1.5.0",
     "process-env-brunch": "https://github.com/kenhkan/process-env-brunch/archive/master.tar.gz",
     "jade": "~0.35.0",
-    "jade-angularjs-brunch": "https://github.com/kenhkan/jade-angularjs-brunch/archive/master.tar.gz"
+    "static-jade-brunch": "~1.7.0",
+    "jade-brunch": "~1.7.2"
   }
 }

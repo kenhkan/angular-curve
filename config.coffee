@@ -7,16 +7,13 @@ exports.config =
     wrapper: false
   paths:
     public: 'public'
-    jadeCompileTrigger: '_jade_templates.js'
   files:
     javascripts:
       joinTo:
         # Non-spec scripts are application code
-        'app.js': /^app\/(?!.+\.spec\.)/
+        'app.js': /^(app|bower_components|vendor)\/(?!.+\.spec\.)/
         # Specs are compiled into another file by themselves
         'spec.js': /^app\/.+\.spec\./
-        # Anything managed by Bower is vendor code
-        'vendor.js': /^(bower_components|vendor)/
       order:
         before: [
           # Essential libraries
@@ -29,19 +26,13 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'app.css': /^app/
-        'vendor.css': /^(bower_components|vendor)/
+        'app.css': /^(app|bower_components|vendor)/
 
     templates:
       joinTo:
-        '_jade_templates.js': /^app/
+        'templates.js': /\.jade$/
 
   plugins:
-    jade_angular:
-      static_mask: /index/
-      # All templates should be in one single file
-      single_file: true
-      single_file_name: 'templates.js'
     process_env:
       raw: true
     coffeescript:

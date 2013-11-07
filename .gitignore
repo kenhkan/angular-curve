@@ -3,3 +3,5 @@
 /node_modules
 /bower_components
 /public
+/app/assets/*.html
+/app/assets/**/*.html

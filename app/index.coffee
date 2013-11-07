@@ -1,6 +1,5 @@
 # Define the module and dependencies
 module = angular.module '$APP_NAME', [
-  'app.templates'
   'ui.state'
   'ui.router'
   'titleService'
