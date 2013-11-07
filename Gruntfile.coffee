@@ -1,9 +1,7 @@
 module.exports = (grunt) ->
   # Paths
   sourceDir = 'app' # Where the source lives
-  buildDir = 'public' # Where fully minified and concatenated output code lives
   configDir = 'etc' # Where to put config files
-  vendorDir = 'bower_components' # Where the package-managed vendor files are
 
   # Load Grunt tasks
   grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -80,9 +78,6 @@ module.exports = (grunt) ->
     ## Execute arbitrary commands
 
     exec:
-      # Install Bower components
-      bower:
-        cmd: 'node_modules/.bin/bower install'
       # Compile for development with Brunch
       brunchCompile:
         cmd: 'node_modules/.bin/brunch build'
@@ -97,24 +92,16 @@ module.exports = (grunt) ->
 
   # Usually you just want to run `grunt` to enter development mode
   grunt.registerTask 'default', [
-    'init'
     'concurrent:develop'
   ]
 
   # Continuous integration mode
   grunt.registerTask 'continuous', [
-    'init'
     'exec:brunchCompile'
     'karma:continuous:start'
   ]
 
   # Build for production
   grunt.registerTask 'build', [
-    'init'
     'exec:brunchBuild'
-  ]
-
-  # Setup
-  grunt.registerTask 'init', [
-    'exec:bower'
   ]

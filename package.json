@@ -14,7 +14,8 @@
   },
   "scripts": {
     "start": "node_modules/.bin/brunch watch --server",
-    "test": "node_modules/.bin/karma start etc/karma.conf.coffee"
+    "test": "node_modules/.bin/karma start etc/karma.conf.coffee",
+    "bower": "node_modules/.bin/bower install"
   },
   "dependencies": {
     "bower": "~1.2.7",
