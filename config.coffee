@@ -28,6 +28,10 @@ exports.config =
       joinTo:
         'app.css': /^(app|bower_components|vendor)/
 
+    templates:
+      joinTo:
+        'templates.js': /^app/
+
   plugins:
     process_env:
       raw: true
