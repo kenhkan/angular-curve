@@ -112,6 +112,8 @@ After having set up the project, the file structure would look like:
 
 * [autoprefixer](https://github.com/ai/autoprefixer): included to ease
   cross-browser CSS headaches
+* [compass](http://compass-style.org/): specify your Gems directory in
+  `config.coffee` under `sass:`
 
 
 ## Conventions and configuration
@@ -164,12 +166,6 @@ There is no convention here. Scripts, styles, and markups are compiled to
 as-is to the top-level directory under `public/`.
 
 Source maps of the compiled files are available in development mode.
-
-### Environment variables
-
-[process-env-brunch](https://github.com/mikeedwards/process-env-brunch) is used
-to scan through all compiled files for `$PROCESS_ENV_<varName>` and take the
-value from `process.env.<varName>` as replacement.
 
 ### App settings
 
