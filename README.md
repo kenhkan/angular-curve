@@ -24,7 +24,7 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 1. I assume you have [Node.js/NPM](http://nodejs.org/)
 2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt`
 3. Clone this repo: `git clone https://github.com/kenhkan/ng-brunch.git`
-4. Get NPM and Bower deps: `npm install`
+4. Get NPM and Bower deps (Bower automatically run): `npm install`
 
 
 ## Usage
