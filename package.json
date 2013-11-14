@@ -13,9 +13,12 @@
     "url": "https://github.com/kenhkan/ng-brunch"
   },
   "scripts": {
-    "start": "node_modules/.bin/brunch watch --server",
-    "test": "node_modules/.bin/karma start etc/karma.conf.coffee",
-    "install": "node_modules/.bin/bower install"
+    "start": "npm run-script watch",
+    "test": "grunt karma:ci",
+    "install": "node_modules/.bin/bower install; npm run-script build",
+    "compile": "node_modules/.bin/brunch build",
+    "build": "node_modules/.bin/brunch build -P",
+    "watch": "node_modules/.bin/brunch watch --server"
   },
   "dependencies": {},
   "devDependencies": {

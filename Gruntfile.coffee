@@ -66,52 +66,53 @@ module.exports = (grunt) ->
         reporters: 'dots'
       unit:
         browsers: -> false
-      continuous:
+      ci:
         singleRun: true
 
-    # Concurrently run watch and server
+    # Concurrently run development and test servers
     concurrent:
       options:
-        limit: 3
         logConcurrentOutput: true
-      # When developing, just run the server and watch for changes
-      develop: [
-        # Start the Karma server
-        'karma:unit:start'
-        # Re-assemble on change
-        'exec:brunchWatch'
-        # Run tests on change
-        'watch:test'
-      ]
+      develop: ['exec:watch', 'karma:unit:start']
 
-    ## Execute arbitrary commands
-
+    # Execute arbitrary commands
     exec:
-      # Compile for development with Brunch
-      brunchCompile:
-        cmd: 'node_modules/.bin/brunch build'
-      # Build for production with Brunch
-      brunchBuild:
-        cmd: 'node_modules/.bin/brunch build -P'
+      # Compile without further processing
+      compile:
+        cmd: 'npm run-script compile'
+      # Build for production
+      build:
+        cmd: 'npm run-script build'
       # Watch for changes for re-assembly
-      brunchWatch:
-        cmd: 'node_modules/.bin/brunch watch --server'
+      watch:
+        cmd: 'npm run-script watch'
 
   ## Build tasks
 
-  # Usually you just want to run `grunt` to enter development mode
+  # Usually you just want to run `grunt` to enter development mode, which
+  # re-assembles on change
   grunt.registerTask 'default', [
     'concurrent:develop'
   ]
 
-  # Continuous integration mode
-  grunt.registerTask 'continuous', [
-    'exec:brunchCompile'
-    'karma:continuous:start'
+  # Just develop (no test server run)
+  grunt.registerTask 'develop', [
+    'exec:watch'
   ]
 
-  # Build for production
+  # Test mode
+  grunt.registerTask 'test', [
+    'karma:unit:start'
+  ]
+
+  # Continuous integration mode
+  grunt.registerTask 'ci', [
+    'karma:ci:start'
+  ]
+
+  # Compile, don't build, as we don't want the files to be minified
   grunt.registerTask 'build', [
-    'exec:brunchBuild'
+    'clean'
+    'exec:compile'
     'docker'
   ]
