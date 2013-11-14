@@ -1,7 +1,5 @@
 *.sw*
 *~
-/node_modules
-/bower_components
-/public
-/app/assets/*.html
-/app/assets/**/*.html
+node_modules
+bower_components
+public

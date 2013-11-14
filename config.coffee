@@ -38,9 +38,6 @@ exports.config =
         'templates.js': /^app/
 
   plugins:
-    process_env:
-      raw: true
-
     ## Scripts
 
     coffeescript:
