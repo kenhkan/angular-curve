@@ -1,6 +1,12 @@
 // Load the application scripts
 var _runLoader = function() {
-  // Create a script element to add to DOM
+  // Create a vendor script element to add to DOM
+  var element = document.createElement("script");
+  element.type = 'text/javascript';
+  element.src = '/vendor.js';
+  document.body.appendChild(element);
+
+  // Create an app script element to add to DOM
   var element = document.createElement("script");
   element.type = 'text/javascript';
   element.src = '/app.js';

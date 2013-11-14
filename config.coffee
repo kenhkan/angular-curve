@@ -1,3 +1,5 @@
+glob = require 'glob'
+
 exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
@@ -12,7 +14,7 @@ exports.config =
     javascripts:
       joinTo:
         # Non-spec scripts are application code
-        'app.js': /^(app|bower_components|vendor)\/(?!.+\.spec\.)/
+        'app.js': /^app\/(?!.+\.spec\.)/
         # Specs are compiled into another file by themselves
         'spec.js': /^app\/.+\.spec\./
         # Vendor code
@@ -23,13 +25,13 @@ exports.config =
           'bower_components/lodash/lodash.js'
           'bower_components/jquery/jquery.js'
           'bower_components/angular/angular.js'
-          # Entry point
-          'app/index.*'
-        ]
+        # Entry point. Put your AngularJS module definition here
+        ].concat glob.sync 'app/index.*'
 
     stylesheets:
       joinTo:
-        'app.css': /^(app|bower_components|vendor)/
+        'app.css': /^app/
+        'vendor.css': /^(bower_components|vendor)/
 
     templates:
       joinTo:
