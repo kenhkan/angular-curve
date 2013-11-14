@@ -44,8 +44,21 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 Development mode:
 
 * Start watching for file changes
-* Start up Karma
 * Spin up a local webserver on `localhost:3333`
+* Start up Karma at `localhost:9876`
+
+### `grunt develop`
+
+Purely development mode. Like development mode but without test server (i.e.
+Karma)
+
+### `grunt test`
+
+Test mode: start up Karma at `localhost:9876`
+
+### `grunt ci`
+
+Continuous mode: run Karma once for testing on Travis, Jenkins, etc
 
 ### `grunt build`
 
@@ -54,10 +67,6 @@ Production mode: build the app in production mode (minified and uglified)
 ### `grunt clean`
 
 This resets the project to its pristine state.
-
-### `grunt continuous`
-
-Continuous mode: for testing on Travis, Jenkins, etc
 
 ### `grunt changelog`
 
