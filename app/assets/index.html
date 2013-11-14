@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="$APP_NAME" ng-controller="ApplicationController">
+  <head>
+    <meta name="twitter:card" content="$CARD_SUMMARY"/>
+    <meta name="twitter:site" content="@$TWITTER_HANDLE"/>
+    <meta name="twitter:title" content="$CARD_TITLE"/>
+    <meta name="twitter:description" content="$CARD_DESCRIPTION"/>
+    <meta name="twitter:creator" content="@$CREATOR_HANDLE"/>
+    <meta name="twitter:image:src" content="$CARD_IMAGE"/>
+    <meta property="og:title" content="$CARD_TITLE"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="$CARD_URL"/>
+    <meta property="og:image" content="$CARD_IMAGE"/>
+    <meta property="og:description" content="$CARD_DESCRIPTION"/>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <link rel="favicon.ico" href="favicon.ico"/>
+    <link rel="stylesheet" href="/vendor.css"/>
+    <link rel="stylesheet" href="/app.css"/>
+  </head>
+  <body>
+    <div ng-include="'home/home.html'"></div>
+    <script type="text/javascript" src="/loader.js"></script>
+  </body>
+</html>

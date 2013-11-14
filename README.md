@@ -29,11 +29,9 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 
 ## Usage
 
-1. Open up `app/index.jade` and edit the `$PROCESS_ENV` variables. In the
-   future these will be populated using environment variables. See [app
-   settings](#app-settings) for more info.
-2. ~~Set the environment variable `APP_NAME` to your app's name~~ Replace
-   `$APP_NAME` with your app name. This will be automated in a setup script in the
+1. Open up `app/assets/index.html` and edit the variables starting with a `$`
+2. Replace `$APP_NAME` with your app name in both `app/assets/index.html` and
+   `app/assets/loader.js`. This will be automated in a setup script in the
    future.
 4. Run `grunt` to get Karma running, watching for file changes, and a server
    running in the background
@@ -93,11 +91,11 @@ After having set up the project, the file structure would look like:
 
     app/ -> Anything specific to the app goes here
     app/assets/ -> Anything here is copied over to top-level directory as-is.
+    app/assets/index.html -> The entry point index page
     app/common/ -> By convention anything that's shared across controllers
     app/application.coffee -> The top-level ApplicationController
     app/application.spec.coffee -> The spec for ApplicationController
     app/index.coffee -> The main entry point, where module definition takes place
-    app/index.jade -> The "index" page
     bower_compoennts/ -> Downloaded Bower components
     etc/changelog.tpl -> The template for building CHANGELOG.md
     etc/karma.conf.coffee -> The Karma configuration file
@@ -175,7 +173,7 @@ value from `process.env.<varName>` as replacement.
 
 ### App settings
 
-Open up `app/index.jade` and update the following to your app's settings:
+Open up `app/assets/index.html` and update the following to your app's settings:
 
 * APP_NAME: the name of the app that will be passed to AngularJS
 * TWITTER_HANDLE: ditto
