@@ -2,11 +2,12 @@ exports.config =
   # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     assets: /^app\/assets\//
+
+  # No wrapping
   modules:
     definition: false
     wrapper: false
-  paths:
-    public: 'public'
+
   files:
     javascripts:
       joinTo:
@@ -14,6 +15,8 @@ exports.config =
         'app.js': /^(app|bower_components|vendor)\/(?!.+\.spec\.)/
         # Specs are compiled into another file by themselves
         'spec.js': /^app\/.+\.spec\./
+        # Vendor code
+        'vendor.js': /^(bower_components|vendor)\/(?!.+\.spec\.)/
       order:
         before: [
           # Essential libraries
@@ -21,7 +24,7 @@ exports.config =
           'bower_components/jquery/jquery.js'
           'bower_components/angular/angular.js'
           # Entry point
-          'app/index.coffee'
+          'app/index.*'
         ]
 
     stylesheets:
