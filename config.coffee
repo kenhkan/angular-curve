@@ -53,4 +53,4 @@ exports.config =
 
     sass:
       # Where is Compass?
-      gem_home: './gems'
+      gem_home: '~/gems'

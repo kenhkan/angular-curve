@@ -11,6 +11,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-concurrent'
+  grunt.loadNpmTasks 'grunt-docker'
 
   # Configuration
   grunt.initConfig
@@ -35,6 +36,14 @@ module.exports = (grunt) ->
         tagMessage: 'Version %VERSION%'
         push: false
         pushTo: 'origin'
+
+    # Documentation
+    docker:
+      app:
+        src: 'app'
+        dest: 'doc'
+        options:
+          extras: ['fileSearch', 'goToLine']
 
     # Clean house
     clean:
@@ -104,4 +113,5 @@ module.exports = (grunt) ->
   # Build for production
   grunt.registerTask 'build', [
     'exec:brunchBuild'
+    'docker'
   ]

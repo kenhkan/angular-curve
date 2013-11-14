@@ -48,6 +48,7 @@
     "eco-brunch": "~1.7.1",
     "handlebars-brunch": "~1.7.2",
     "less-brunch": "~1.7.0",
-    "autoprefixer-brunch": "~1.7.3"
+    "autoprefixer-brunch": "~1.7.3",
+    "grunt-docker": "0.0.5"
   }
 }
