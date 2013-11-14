@@ -17,7 +17,8 @@
     "test": "node_modules/.bin/karma start etc/karma.conf.coffee",
     "install": "node_modules/.bin/bower install"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "bower": "~1.2.7",
     "karma": "~0.9.0",
     "brunch": "~1.7.10",
@@ -41,6 +42,12 @@
     "process-env-brunch": "https://github.com/kenhkan/process-env-brunch/archive/master.tar.gz",
     "jade": "~0.35.0",
     "jade-brunch": "~1.7.2",
-    "ng-templates-brunch": "0.0.2"
+    "ng-templates-brunch": "0.0.2",
+    "markdown-brunch": "~1.7.2",
+    "sass-brunch": "~1.7.0",
+    "eco-brunch": "~1.7.1",
+    "handlebars-brunch": "~1.7.2",
+    "less-brunch": "~1.7.0",
+    "autoprefixer-brunch": "~1.7.3"
   }
 }

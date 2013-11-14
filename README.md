@@ -100,21 +100,44 @@ After having set up the project, the file structure would look like:
     README.md -> This document
 
 
+## Features
+
+* [autoprefixer](https://github.com/ai/autoprefixer): included to ease
+  cross-browser CSS headaches
+
+
 ## Conventions and configuration
 
-### Technologies
+### Supported file types
 
 Because ng-brunch doesn't try to handle the assembly process itself, it
 supports anything found in the powerful ecosystem of Brunch! By default this
 repo supports:
 
-* JavaScript/CoffeeScript
-* CSS/Stylus
-* HTML/Jade
+* CSS/JS: `.css`, `.js` (duh!)
+* CoffeeScript: `.coffee`
+* Literate CoffeeScript: `.litcoffee`
+* SASS: `.sass`
+* LESS: `.less`
+* Stylus: `.styl`
+* Handlebars: `.hbs`
+* Eco: `.eco`
+* Jade: `.jade`
+* Mardown: `.md`
 
-But adding your favorite technologies are as easy as running `npm install
-<brunch-plugin>`! Visit the [plugin
-directory](https://github.com/brunch/brunch/wiki/Plugins) to hunt for your gems!
+Add more by running `npm install --save yourDesiredFileTypeHere-brunch`.
+Search on NPM with `yourDesiredFileTypeHere brunch` for the correct NPM module.
+Or visit the [plugin directory](https://github.com/brunch/brunch/wiki/Plugins)
+to hunt for your gems!
+
+Under the `app` directory:
+
+* Script files are compiled into one JavaScript file, `lib/code.js`
+* Test files in JavaScript/CoffeeScript (`*.spec.js` and `*.spec.coffee`) are
+  compiled into the file `lib/spec.js`
+* Style files are compiled into one CSS file `lib/style.css`
+* Markup files are compiled into one template-containing JavaScript file
+  `lib/templates.js`
 
 ### Package management
 
