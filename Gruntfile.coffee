@@ -92,21 +92,25 @@ module.exports = (grunt) ->
   # Usually you just want to run `grunt` to enter development mode, which
   # re-assembles on change
   grunt.registerTask 'default', [
+    'clean'
     'concurrent:develop'
   ]
 
   # Just develop (no test server run)
   grunt.registerTask 'develop', [
+    'clean'
     'exec:watch'
   ]
 
   # Test mode
   grunt.registerTask 'test', [
+    'clean'
     'karma:unit:start'
   ]
 
   # Continuous integration mode
   grunt.registerTask 'ci', [
+    'clean'
     'karma:ci:start'
   ]
 

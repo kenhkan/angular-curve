@@ -38,6 +38,7 @@ exports.config =
         'templates.js': /^app/
 
   plugins:
+
     ## Scripts
 
     coffeescript:

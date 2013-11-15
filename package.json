@@ -44,7 +44,7 @@
     "coffeelint-brunch": "~1.5.0",
     "jade": "~0.35.0",
     "jade-brunch": "~1.7.2",
-    "ng-templates-brunch": "0.0.2",
+    "ng-templates-brunch": "0.0.3",
     "markdown-brunch": "~1.7.2",
     "sass-brunch": "~1.7.0",
     "eco-brunch": "~1.7.1",

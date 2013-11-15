@@ -1,7 +1,6 @@
 (function() {
-  blah
   var APP_NAME = '$APP_NAME';
-  var TEMPLATES_NAME = 'app.templates';
+  var TEMPLATES_NAME = 'appTemplates';
   var ROOT = '';
 
   // Load the Pixbi embed
