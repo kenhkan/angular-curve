@@ -79,13 +79,16 @@ module.exports = (grunt) ->
     exec:
       # Compile without further processing
       compile:
-        cmd: 'npm run-script compile'
+        cmd: 'node_modules/.bin/brunch build',
       # Build for production
       build:
-        cmd: 'npm run-script build'
+        cmd: 'node_modules/.bin/brunch build -P',
       # Watch for changes for re-assembly
       watch:
-        cmd: 'npm run-script watch'
+        cmd: 'node_modules/.bin/brunch watch --server'
+      # Install Bower
+      bower:
+        cmd: 'node_modules/.bin/bower install'
 
   ## Build tasks
 
@@ -119,4 +122,10 @@ module.exports = (grunt) ->
     'clean'
     'exec:compile'
     'docker'
+  ]
+
+  # Procedure post-install for NPM
+  grunt.registerTask 'postinstall', [
+    'exec:bower'
+    'build'
   ]

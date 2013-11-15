@@ -13,12 +13,11 @@
     "url": "https://github.com/kenhkan/ng-brunch"
   },
   "scripts": {
-    "start": "npm run-script watch",
+    "start": "grunt",
     "test": "grunt karma:ci",
-    "install": "node_modules/.bin/bower install; npm run-script build",
-    "compile": "node_modules/.bin/brunch build",
-    "build": "node_modules/.bin/brunch build -P",
-    "watch": "node_modules/.bin/brunch watch --server"
+    "install": "grunt postinstall",
+    "build": "grunt build",
+    "watch": "grunt develop"
   },
   "dependencies": {},
   "devDependencies": {
