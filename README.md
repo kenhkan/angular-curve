@@ -114,6 +114,9 @@ After having set up the project, the file structure would look like:
   cross-browser CSS headaches
 * [compass](http://compass-style.org/): specify your Gems directory in
   `config.coffee` under `sass:`
+* [Docker](http://jbt.github.io/docker/): generate documentation on build. Note
+  that Docker only recognizes JSDoc declaration when it's in a block-style
+  comment (i.e. `/* ... */`)
 
 
 ## Conventions and configuration
