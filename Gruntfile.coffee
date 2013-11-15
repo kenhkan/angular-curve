@@ -99,9 +99,8 @@ module.exports = (grunt) ->
     'concurrent:develop'
   ]
 
-  # Just develop (no test server run)
-  grunt.registerTask 'develop', [
-    'clean'
+  # Just run server and watch files
+  grunt.registerTask 'server', [
     'exec:watch'
   ]
 

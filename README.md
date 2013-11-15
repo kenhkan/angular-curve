@@ -49,10 +49,10 @@ Development mode:
 * Spin up a local webserver on `localhost:3333`
 * Start up Karma at `localhost:9876`
 
-### `grunt develop`
+### `grunt server`
 
-Purely development mode. Like development mode but without test server (i.e.
-Karma)
+Server watch mode. Like development mode but without test server (i.e.
+Karma). Files are updated and served on `localhost:3333`
 
 ### `grunt test`
 
