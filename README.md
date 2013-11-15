@@ -25,6 +25,10 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt`
 3. Clone this repo: `git clone https://github.com/kenhkan/ng-brunch.git`
 4. Get NPM and Bower deps (Bower automatically run): `npm install`
+5. Install Pygments so that [Docker](https://github.com/jbt/docker) can
+   generate documentation for you, docco-style: `pip pygments`
+6. (Optional) Configure Compass by editing the `sass:` attribute in
+   `config.coffee`
 
 
 ## Usage

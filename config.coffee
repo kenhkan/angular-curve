@@ -1,7 +1,7 @@
 glob = require 'glob'
 
+# See docs at https://github.com/brunch/brunch/blob/stable/docs/config.md
 exports.config =
-  # See docs at http://brunch.readthedocs.org/en/latest/config.html.
   conventions:
     assets: /^app\/assets\//
 
