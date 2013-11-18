@@ -31,17 +31,17 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
    `config.coffee`
 6. Get NPM deps: `npm install`
 7. Get Bower deps: `bower install`
+8. Open up `app/assets/index.html` and edit the variables starting with a `$`.
+   This will be automated in a setup script in the future
+9. Replace `$APP_NAME` with your app name in `app/assets/loader.js`. This will
+   be automated in a setup script in the future.
 
 
 ## Usage
 
-1. Open up `app/assets/index.html` and edit the variables starting with a `$`.
-   This will be automated in a setup script in the future
-2. Replace `$APP_NAME` with your app name in `app/assets/loader.js`. This will
-   be automated in a setup script in the future.
-3. Run `grunt` to get Karma running, watching for file changes, and a server
+1. Run `grunt` to get Karma running, watching for file changes, and a server
    running in the background
-4. Open `localhost:3333` in the newly Karma-opened browser to view your app
+2. Open `localhost:3333` in the newly Karma-opened browser to view your app
 
 ### `grunt`
 
