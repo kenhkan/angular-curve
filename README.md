@@ -21,11 +21,13 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 
 ## Installation
 
-1. I assume you have [Node.js/NPM](http://nodejs.org/)
-2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt`
-3. Install Pygments so that [Docker](https://github.com/jbt/docker) can
+1. Clone this repo (of course): `git clone
+   https://github.com/kenhkan/ng-brunch.git`
+2. I assume you have [Node.js/NPM](http://nodejs.org/)
+3. You need [Grunt](http://gruntjs.com/): `npm install -g grunt`
+4. Install Pygments so that [Docker](https://github.com/jbt/docker) can
    generate documentation for you, docco-style: `pip pygments`
-4. (Optional) Configure Compass by editing the `sass:` attribute in
+5. (Optional) Configure Compass by editing the `sass:` attribute in
    `config.coffee`
 6. Get NPM deps: `npm install`
 7. Get Bower deps: `bower install`
@@ -33,14 +35,13 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 
 ## Usage
 
-1. Clone this repo: `git clone https://github.com/kenhkan/ng-brunch.git`
-2. Open up `app/assets/index.html` and edit the variables starting with a `$`
-3. Replace `$APP_NAME` with your app name in both `app/assets/index.html` and
-   `app/assets/loader.js`. This will be automated in a setup script in the
-   future.
-4. Run `grunt` to get Karma running, watching for file changes, and a server
+1. Open up `app/assets/index.html` and edit the variables starting with a `$`.
+   This will be automated in a setup script in the future
+2. Replace `$APP_NAME` with your app name in `app/assets/loader.js`. This will
+   be automated in a setup script in the future.
+3. Run `grunt` to get Karma running, watching for file changes, and a server
    running in the background
-5. Open `localhost:3333` in the newly Karma-opened browser to view your app
+4. Open `localhost:3333` in the newly Karma-opened browser to view your app
 
 ### `grunt`
 

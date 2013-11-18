@@ -1,6 +1,10 @@
 (function() {
+  // Your AngularJS application's name
   var APP_NAME = '$APP_NAME';
+  // Your templates AngularJS module
   var TEMPLATES_NAME = 'appTemplates';
+  // Where the built files would eventually live. If it's on its own domain,
+  // this could be blank
   var ROOT = '';
 
   // Load the Pixbi embed
