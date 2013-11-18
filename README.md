@@ -27,7 +27,8 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
    generate documentation for you, docco-style: `pip pygments`
 4. (Optional) Configure Compass by editing the `sass:` attribute in
    `config.coffee`
-5. Get NPM and Bower deps: `npm install`
+6. Get NPM deps: `npm install`
+7. Get Bower deps: `bower install`
 
 
 ## Usage

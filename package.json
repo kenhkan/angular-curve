@@ -15,7 +15,6 @@
   "scripts": {
     "start": "grunt",
     "test": "grunt karma:ci",
-    "install": "grunt postinstall",
     "build": "grunt build",
     "watch": "grunt develop"
   },

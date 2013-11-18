@@ -86,9 +86,6 @@ module.exports = (grunt) ->
       # Watch for changes for re-assembly
       watch:
         cmd: 'node_modules/.bin/brunch watch --server'
-      # Install Bower
-      bower:
-        cmd: 'node_modules/.bin/bower install'
 
   ## Build tasks
 
@@ -121,10 +118,4 @@ module.exports = (grunt) ->
     'clean'
     'exec:compile'
     'docker'
-  ]
-
-  # Procedure post-install for NPM
-  grunt.registerTask 'postinstall', [
-    'exec:bower'
-    'build'
   ]
