@@ -178,19 +178,3 @@ There is no convention here. Scripts, styles, and markups are compiled to
 as-is to the top-level directory under `public/`.
 
 Source maps of the compiled files are available in development mode.
-
-### App settings
-
-Open up `app/assets/index.html` and update the following to your app's settings:
-
-* APP_NAME: the name of the app that will be passed to AngularJS
-* TWITTER_HANDLE: ditto
-* CREATOR_HANDLE: the creator's Twitter handle
-* CARD_SUMMARY: a summary for Twitter card
-* CARD_TITLE: ditto
-* CARD_DESCRIPTION: ditto
-* CARD_IMAGE: the URL pointing to an image for the card
-* CARD_URL: the URL pointing to any page
-
-Aside from these variables, remember to update your AngularJS dependencies in
-`app/index.coffee`.
