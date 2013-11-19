@@ -1,5 +1,5 @@
 # Define the module and dependencies
-module = angular.module '$APP_NAME'
+module = angular.module 'myApplication'
 
 # Root controller
 module.controller 'ApplicationController', ($scope, $location) ->

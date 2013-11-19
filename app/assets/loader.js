@@ -1,6 +1,6 @@
 (function() {
   // Your AngularJS application's name
-  var APP_NAME = '$APP_NAME';
+  var APP_NAME = 'myApplication';
   // Your templates AngularJS module
   var TEMPLATES_NAME = 'appTemplates';
   // Where the built files would eventually live. If it's on its own domain,

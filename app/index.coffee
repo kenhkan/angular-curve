@@ -1,5 +1,5 @@
 # Define the module and dependencies
-module = angular.module '$APP_NAME', [
+module = angular.module 'myApplication', [
   'appTemplates'
   'titleService'
 ]
@@ -11,4 +11,4 @@ module.config ($locationProvider) ->
 
 # Entry point
 module.run (titleService) ->
-  titleService.setSuffix " | #{'$APP_NAME'}"
+  titleService.setSuffix " | #{'myApplication'}"

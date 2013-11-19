@@ -33,7 +33,7 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 7. Get Bower deps: `bower install`
 8. Open up `app/assets/index.html` and edit the variables starting with a `$`.
    This will be automated in a setup script in the future
-9. Replace `$APP_NAME` with your app name in `app/assets/loader.js` and script
+9. Replace `yourApplicationNameHere` with your app name in `app/assets/loader.js` and script
    files under `app/`. This will be automated in a setup script in the future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
