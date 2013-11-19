@@ -60,7 +60,7 @@
                 window.clearInterval(checkerId);
               } catch (error) {
                 // Look for this error message for not finding the application module
-                var appNotFound = new RegExp("[$injector:nomod] Module '" + APP_NAME);
+                var appNotFound = new RegExp('Module \'' + APP_NAME + '\' is not available');
 
                 // Throw error if it's not missing the module
                 if (error.message.match(appNotFound) === null) {
@@ -70,7 +70,7 @@
             }, 50);
           } catch (error) {
             // Look for this error message for not finding the templates module
-            var templatesNotFound = new RegExp("[$injector:nomod] Module '" + TEMPLATES_NAME);
+            var templatesNotFound = new RegExp('Module \'' + TEMPLATES_NAME + '\' is not available');
 
             // Throw error if it's not missing the module
             if (error.message.match(templatesNotFound) === null) {
