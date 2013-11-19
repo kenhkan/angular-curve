@@ -5,12 +5,9 @@ module = angular.module '$APP_NAME', [
 ]
 
 # Routing
-module.config ($locationProvider, $stateProvider, $urlRouterProvider) ->
+module.config ($locationProvider) ->
   # Use HTML5 mode
   $locationProvider.html5Mode true
-
-  # Redirection rules
-  $urlRouterProvider.otherwise '/'
 
 # Entry point
 module.run (titleService) ->
