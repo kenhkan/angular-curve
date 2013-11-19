@@ -50,7 +50,3 @@ exports.config =
     autoprefixer:
       # Definitely no IE6, but IE7?
       browsers: ["last 1 version", "> 1%", "ie 8", "ie 7"]
-
-    sass:
-      # Where is Compass?
-      gem_home: '~/gems'

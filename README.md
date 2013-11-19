@@ -27,13 +27,11 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 3. You need [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
 4. Install Pygments so that [Docker](https://github.com/jbt/docker) can
    generate documentation for you, docco-style: `pip pygments`
-5. (Optional) Configure Compass by editing the `sass:` attribute in
-   `config.coffee`
-6. Get NPM deps: `npm install`
-7. Get Bower deps: `bower install`
-8. Open up `app/assets/index.html` and edit the variables starting with a `$`.
+5. Get NPM deps: `npm install`
+6. Get Bower deps: `bower install`
+7. Open up `app/assets/index.html` and edit the variables starting with a `$`.
    This will be automated in a setup script in the future
-9. Replace `myApplication` with your app name in `app/assets/loader.js` and script
+8. Replace `myApplication` with your app name in `app/assets/loader.js` and script
    files under `app/`. This will be automated in a setup script in the future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
@@ -121,8 +119,9 @@ After having set up the project, the file structure would look like:
 
 * [autoprefixer](https://github.com/ai/autoprefixer): included to ease
   cross-browser CSS headaches
-* [compass](http://compass-style.org/): specify your Gems directory in
-  `config.coffee` under `sass:`
+* [compass](http://compass-style.org/): configure Compass by defining
+  `$GEM_HOME` on your command-line or in `config.coffee`. Check
+  [sass-brunch](https://github.com/brunch/sass-brunch#options) for more info
 * [Docker](http://jbt.github.io/docker/): generate documentation on build. Note
   that Docker only recognizes JSDoc declaration when it's in a block-style
   comment (i.e. `/* ... */`)
