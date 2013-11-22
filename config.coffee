@@ -10,6 +10,9 @@ exports.config =
     definition: false
     wrapper: false
 
+  server:
+    port: 8888
+
   files:
     javascripts:
       joinTo:

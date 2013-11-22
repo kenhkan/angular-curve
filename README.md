@@ -35,27 +35,27 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
    files under `app/`. This will be automated in a setup script in the future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
-the project and run a server at `localhost:3333`: `./setup.sh`
+the project and run a server at `localhost:8888`: `./setup.sh`
 
 
 ## Usage
 
 1. Run `grunt` to get Karma running, watching for file changes, and a server
    running in the background
-2. Open `localhost:3333` in the newly Karma-opened browser to view your app
+2. Open `localhost:8888` in the newly Karma-opened browser to view your app
 
 ### `grunt`
 
 Development mode:
 
 * Start watching for file changes
-* Spin up a local webserver on `localhost:3333`
+* Spin up a local webserver on `localhost:8888`
 * Start up Karma at `localhost:9876`
 
 ### `grunt server`
 
 Server watch mode. Like development mode but without test server (i.e.
-Karma). Files are updated and served on `localhost:3333`
+Karma). Files are updated and served on `localhost:8888`
 
 ### `grunt test`
 
