@@ -7,6 +7,7 @@ module.exports = (grunt) ->
 
   # Load Grunt tasks
   grunt.loadNpmTasks 'grunt-contrib-clean'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-conventional-changelog'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-bump'
@@ -77,6 +78,12 @@ module.exports = (grunt) ->
         logConcurrentOutput: true
       develop: ['exec:watch', 'karma:unit:start']
 
+    copy:
+      # Copy over index as 404
+      '404':
+        src: "#{BUILD_DIR}/index.html"
+        dest: "#{BUILD_DIR}/404.html"
+
     # Execute arbitrary commands
     exec:
       # Compile without further processing
@@ -119,5 +126,6 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean'
     'exec:compile'
+    'copy:404'
     'docker'
   ]
