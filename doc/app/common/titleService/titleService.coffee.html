@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>titleService.coffee</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="../../../doc-style.css" />
+  <script src="../../../doc-filelist.js"></script>
+  <script>
+    var relativeDir = "../../../", thisFile = "app/common/titleService/titleService.coffee", defaultSidebar = true;
+  </script>
+  <script src="../../../doc-script.js"></script>
+  <script src="../../../fileSearch.js"></script>
+  <script src="../../../goToLine.js"></script>
+  <link rel="stylesheet" href="../../../fileSearch.css" />
+  <link rel="stylesheet" href="../../../goToLine.css" />
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container"><div class="background highlight"></div>
+<table cellpadding="0" cellspacing="0">
+  <tbody>
+      <tr>
+        <td class="docs">
+          <h1>titleService.coffee</h1>
+        </td>
+        <td class="code highlight"></td>
+      </tr>
+      <tr>
+        <td class="docs">
+<div class="pilwrap">
+  <a class="pilcrow" href="#section-1" id="section-1">&#182;</a>
+</div>
+
+        </td>
+        <td class="code highlight"><div class="highlight"><pre><span class="nv">module = </span><span class="nx">angular</span><span class="p">.</span><span class="nx">module</span> <span class="s">&#39;titleService&#39;</span><span class="p">,</span> <span class="p">[]</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">factory</span> <span class="s">&#39;titleService&#39;</span><span class="p">,</span> <span class="nf">($document) -&gt;</span>
+  <span class="nv">suffix = title = </span><span class="s">&quot;&quot;</span>
+
+  <span class="nv">setSuffix: </span><span class="nf">(s) -&gt;</span>
+    <span class="nv">suffix = </span><span class="nx">s</span>
+
+  <span class="nv">getSuffix: </span><span class="o">-&gt;</span>
+    <span class="nx">suffix</span>
+
+  <span class="nv">setTitle: </span><span class="nf">(t) -&gt;</span>
+    <span class="k">if</span> <span class="nx">suffix</span> <span class="o">isnt</span> <span class="s">&quot;&quot;</span>
+      <span class="nv">title = </span><span class="nx">t</span> <span class="o">+</span> <span class="nx">suffix</span>
+    <span class="k">else</span>
+      <span class="nv">title = </span><span class="nx">t</span>
+
+    <span class="nx">$document</span><span class="p">.</span><span class="nx">prop</span> <span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="nx">title</span>
+
+  <span class="nv">getTitle: </span><span class="o">-&gt;</span>
+    <span class="nx">$document</span><span class="p">.</span><span class="nx">prop</span> <span class="s">&#39;title&#39;</span>
+</pre></div>
+        </td>
+      </tr>
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

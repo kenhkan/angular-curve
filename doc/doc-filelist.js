@@ -1,0 +1,1 @@
+var tree={"dirs":{"app":{"files":["application.coffee","application.spec.coffee","index.coffee"],"dirs":{"assets":{"files":["index.html","loader.js"]},"common":{"dirs":{"theme":{"files":["theme.styl"]},"titleService":{"files":["titleService.coffee","titleService.spec.coffee"]}}},"home":{"files":["index.jade"]}}}}};
