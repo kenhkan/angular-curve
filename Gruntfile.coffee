@@ -122,10 +122,10 @@ module.exports = (grunt) ->
     'karma:ci:start'
   ]
 
-  # Compile, don't build, as we don't want the files to be minified
+  # Build -- minify and uglify
   grunt.registerTask 'build', [
     'clean'
-    'exec:compile'
+    'exec:build'
     'copy:404'
     'docker'
   ]
