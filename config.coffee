@@ -47,9 +47,3 @@ exports.config =
     coffeescript:
       # Auto-wrap in self-calling function
       bare: false
-
-    ## Styles
-
-    autoprefixer:
-      # Definitely no IE6, but IE7?
-      browsers: ["last 1 version", "> 1%", "ie 8", "ie 7"]
