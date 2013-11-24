@@ -1,7 +1,9 @@
 module.exports = (grunt) ->
   # Paths
-  sourceDir = 'app' # Where the source lives
-  configDir = 'etc' # Where to put config files
+  SOURCE_DIR = 'app'
+  CONFIG_DIR = 'etc'
+  BUILD_DIR = 'public'
+  DOC_DIR = 'doc'
 
   # Load Grunt tasks
   grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -22,7 +24,7 @@ module.exports = (grunt) ->
     changelog:
       options:
         dest: 'CHANGELOG.md'
-        template: 'etc/changelog.tpl'
+        template: "#{CONFIG_DIR}/changelog.tpl"
 
     # Bump version to both Bower and NPM
     bump:
@@ -40,14 +42,14 @@ module.exports = (grunt) ->
     # Documentation
     docker:
       app:
-        src: 'app'
-        dest: 'doc'
+        src: SOURCE_DIR
+        dest: DOC_DIR
         options:
           extras: ['fileSearch', 'goToLine']
 
     # Clean house
     clean:
-      build: ['public']
+      build: [BUILD_DIR]
 
     # Watch
     watch:
@@ -55,13 +57,13 @@ module.exports = (grunt) ->
         livereload: true
       # Run test case
       test:
-        files: ["#{sourceDir}/**/*"]
+        files: ["#{SOURCE_DIR}/**/*"]
         tasks: ['karma:unit:run']
 
     # Testing
     karma:
       options:
-        configFile: "#{configDir}/karma.conf.coffee"
+        configFile: "#{CONFIG_DIR}/karma.conf.coffee"
         browsers: ['PhantomJS']
         reporters: 'dots'
       unit:
