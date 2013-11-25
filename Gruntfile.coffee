@@ -107,6 +107,7 @@ module.exports = (grunt) ->
 
   # Just run server and watch files
   grunt.registerTask 'server', [
+    'clean'
     'exec:watch'
   ]
 
