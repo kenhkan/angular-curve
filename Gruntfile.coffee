@@ -31,13 +31,13 @@ module.exports = (grunt) ->
     bump:
       options:
         files: ['package.json', 'bower.json']
-        commit: false
+        commit: true
         commitMessage: 'chore(release): v%VERSION%'
-        commitFiles: ['package.json', 'client/bower.json']
-        createTag: false
+        commitFiles: ['package.json']
+        createTag: true
         tagName: 'v%VERSION%'
         tagMessage: 'Version %VERSION%'
-        push: false
+        push: true
         pushTo: 'origin'
 
     # Documentation
