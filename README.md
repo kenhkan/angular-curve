@@ -21,15 +21,13 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 
 ## Installation
 
-1. Clone this repo (of course): `git clone
-   https://github.com/kenhkan/ng-brunch.git`
-2. I assume you have [Node.js/NPM](http://nodejs.org/)
-3. You need [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
-4. Install Pygments so that [Docker](https://github.com/jbt/docker) can
+1. I assume you have [Node.js/NPM](http://nodejs.org/)
+2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
+3. Install Pygments so that [Docker](https://github.com/jbt/docker) can
    generate documentation for you, docco-style: `pip pygments`
-5. Get NPM deps: `npm install`
-6. Get Bower deps: `bower install`
-7. Replace `myApplication` with your app name in `app/assets/loader.js` and script
+4. Get NPM deps: `npm install`
+5. Get Bower deps: `bower install`
+6. Replace `myApplication` with your app name in `app/assets/loader.js` and script
    files under `app/`. This will be automated in a setup script in the future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
@@ -127,8 +125,7 @@ After having set up the project, the file structure would look like:
 
 ### Supported file types
 
-Because ng-brunch doesn't try to handle the assembly process itself, it
-supports anything found in the powerful ecosystem of Brunch! By default this
+Anything found in the Brunch plugin ecosystem is supported! By default this
 repo supports:
 
 * CSS/JS: `.css`, `.js` (duh!)
