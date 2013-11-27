@@ -27,8 +27,9 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
    generate documentation for you, docco-style: `pip pygments`
 4. Get NPM deps: `npm install`
 5. Get Bower deps: `bower install`
-6. Replace `myApplication` with your app name in `app/assets/loader.js` and script
-   files under `app/`. This will be automated in a setup script in the future.
+6. Replace `myApplication` with your app name in `app/assets/loader.js` and
+   script files under `app/`. This will be automated in a setup script in the
+   future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
 the project and run a server at `localhost:8888`: `./setup.sh`
