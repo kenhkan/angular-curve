@@ -29,9 +29,7 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
    generate documentation for you, docco-style: `pip pygments`
 5. Get NPM deps: `npm install`
 6. Get Bower deps: `bower install`
-7. Open up `app/assets/index.html` and edit the variables starting with a `$`.
-   This will be automated in a setup script in the future
-8. Replace `myApplication` with your app name in `app/assets/loader.js` and script
+7. Replace `myApplication` with your app name in `app/assets/loader.js` and script
    files under `app/`. This will be automated in a setup script in the future.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
@@ -117,8 +115,6 @@ After having set up the project, the file structure would look like:
 
 ## Features
 
-* [autoprefixer](https://github.com/ai/autoprefixer): included to ease
-  cross-browser CSS headaches
 * [compass](http://compass-style.org/): configure Compass by defining
   `$GEM_HOME` on your command-line or in `config.coffee`. Check
   [sass-brunch](https://github.com/brunch/sass-brunch#options) for more info
