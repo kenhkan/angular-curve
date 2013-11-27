@@ -23,13 +23,11 @@ exports.config =
         # Vendor code
         'vendor.js': /^(bower_components|vendor)\/(?!.+\.spec\.)/
       order:
-        before: [
-          # Essential libraries
-          'bower_components/lodash/lodash.js'
-          'bower_components/jquery/jquery.js'
-          'bower_components/angular/angular.js'
-        # Entry point. Put your AngularJS module definition here
-        ].concat glob.sync 'app/index.*'
+        before: []
+          # Vendor files
+          .concat(glob.sync 'bower_components/**/*.js')
+          # Entry point. Put your AngularJS module definition here
+          .concat(glob.sync 'app/index.*')
 
     stylesheets:
       joinTo:
