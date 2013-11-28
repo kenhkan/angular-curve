@@ -14,12 +14,12 @@
   });
 
   // Prepare controller declaration
-  document.body.setAttribute('ng-controller', 'ApplicationController');
+  baseElement.setAttribute('ng-controller', 'ApplicationController');
 
   require(['require', 'vendor'], function(require, vendor) {
     require(['require', 'templates'], function(require, templates) {
       require(['require', 'app'], function(require, app) {
-        angular.bootstrap(document.body, [APP_NAME]);
+        angular.bootstrap(baseElement, [APP_NAME]);
       });
     });
   });
