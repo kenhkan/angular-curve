@@ -44,7 +44,7 @@ module.exports = (grunt) ->
 
     # Clean house
     clean:
-      build: [BUILD_DIR, DOC_DIR]
+      build: [BUILD_DIR]
 
     # Watch
     watch:
@@ -123,13 +123,13 @@ module.exports = (grunt) ->
     'clean'
     'exec:build'
     'copy:404'
-    'docker'
   ]
 
   # Release -- new version!
   grunt.registerTask 'release', (type) ->
     grunt.task.run [
       "bump-only:#{type or 'patch'}"
+      'docker'
       'changelog'
       'bump-commit'
     ]
