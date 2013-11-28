@@ -30,6 +30,9 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 6. Replace `myApplication` with your app name in `app/assets/loader.js` and
    script files under `app/`. This will be automated in a setup script in the
    future.
+7. Your entry point is at `app/assets/index.html`, a copy of which will be
+   produced when building to `404.html` to ensure not-found errors are catched by
+   AngularJS.
 
 Or, if you're on a POSIX system, run the one-line setup script that bootstraps
 the project and run a server at `localhost:8888`: `./setup.sh`

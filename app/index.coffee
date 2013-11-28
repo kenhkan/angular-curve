@@ -1,8 +1,16 @@
 # Define the module and dependencies
-module = angular.module 'myApplication', [
-  'appTemplates'
+dependencies = [
   'titleService'
 ]
+
+# Only include templates if it exists
+try
+  angular.module 'appTemplates'
+  dependencies.push 'appTemplates'
+catch err
+
+# Define the module and dependencies
+module = angular.module 'myApplication', dependencies
 
 # Routing
 module.config ($locationProvider) ->

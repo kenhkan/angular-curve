@@ -5,10 +5,10 @@ exports.config =
   conventions:
     assets: /^app\/assets\//
 
-  # No wrapping
+  # AMD - We use RequireJS
   modules:
-    definition: false
-    wrapper: false
+    definition: 'amd'
+    wrapper: 'amd'
 
   server:
     port: 8888
@@ -23,11 +23,18 @@ exports.config =
         # Vendor code
         'vendor.js': /^(bower_components|vendor)\/(?!.+\.spec\.)/
       order:
-        before: []
-          # Vendor files
-          .concat(glob.sync 'bower_components/**/*.js')
-          # Entry point. Put your AngularJS module definition here
-          .concat(glob.sync 'app/index.*')
+        before: [
+          # Essential libraries
+          'bower_components/lodash/dist/lodash.js'
+          'bower_components/jquery/jquery.js'
+          'bower_components/angular/angular.js'
+        ]
+        # Vendor files
+        .concat(glob.sync 'bower_components/**/*.js')
+        # Entry point. Put your AngularJS module definition here
+        .concat(glob.sync 'app/index.*')
+        # Common scripts take precedence
+        .concat(glob.sync 'app/common/**/*')
 
     stylesheets:
       joinTo:

@@ -1,8 +1,12 @@
 'use strict';
 
 (function() {
+  // This app's name. Must match what you have in `angular.module()`
   var APP_NAME = 'myApplication';
+  // Base URL for RequireJS to load files
   var BASE_URL = '/';
+  // Element on which to load AngularJS
+  var baseElement = document.body;
 
   // RequireJS settings
   require.config({

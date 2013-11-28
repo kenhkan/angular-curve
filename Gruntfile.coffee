@@ -50,7 +50,7 @@ module.exports = (grunt) ->
 
     # Clean house
     clean:
-      build: [BUILD_DIR]
+      build: [BUILD_DIR, DOC_DIR]
 
     # Watch
     watch:
@@ -120,6 +120,7 @@ module.exports = (grunt) ->
   # Continuous integration mode
   grunt.registerTask 'ci', [
     'clean'
+    'exec:build'
     'karma:ci:start'
   ]
 

@@ -15,8 +15,7 @@
   "scripts": {
     "start": "grunt",
     "test": "grunt karma:ci",
-    "build": "grunt build",
-    "watch": "grunt develop"
+    "build": "grunt build"
   },
   "dependencies": {},
   "devDependencies": {

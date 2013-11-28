@@ -2,7 +2,10 @@
   "name": "ng-brunch",
   "repo": "kenhkan/ng-brunch",
   "version": "0.0.0",
-  "main": "public/app.js",
+  "main": [
+    "public/app.js",
+    "public/app.css"
+  ],
   "ignore": [
     "**/.*",
     "node_modules",
