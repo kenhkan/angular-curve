@@ -1,4 +1,3 @@
-# Define the module and dependencies
 module = angular.module 'myApplication'
 
 # Root controller
