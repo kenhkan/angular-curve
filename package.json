@@ -49,6 +49,7 @@
     "less-brunch": "~1.7.0",
     "grunt-docker": "0.0.5",
     "glob": "~3.2.7",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "autoprefixer-brunch": "~1.7.3"
   }
 }
