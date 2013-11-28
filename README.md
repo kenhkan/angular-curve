@@ -73,13 +73,16 @@ Production mode: build the app in production mode (minified and uglified)
 
 This resets the project to its pristine state.
 
-### `grunt changelog`
+### `grunt release`
 
-See [changelog building](https://github.com/btford/grunt-conventional-changelog)
+Release a new version. It does a few things:
 
-### `grunt bump`
-
-See [version bumping](https://github.com/vojtajina/grunt-bump)
+1. Bump version: see [version bumping](https://github.com/vojtajina/grunt-bump)
+2. Build changelog: see [changelog
+   building](https://github.com/btford/grunt-conventional-changelog)
+3. Make a commit with version number, [semvar style](http://semver.org/)
+4. Tag the commit with version number
+5. Push to remote `origin`
 
 
 ## Style
