@@ -21,12 +21,6 @@ module.exports = (grunt) ->
     # Package metadata
     pkg: grunt.file.readJSON 'package.json'
 
-    # Automatic changelog
-    changelog:
-      options:
-        dest: 'CHANGELOG.md'
-        template: "#{CONFIG_DIR}/changelog.tpl"
-
     # Bump version to both Bower and NPM
     bump:
       options:
