@@ -127,7 +127,7 @@ After having set up the project, the file structure would look like:
   that Docker only recognizes JSDoc declaration when it's in a block-style
   comment (i.e. `/* ... */`)
 * [autoprefixer](https://github.com/lydell/autoprefixer): uses [Can I
-  use](caniuse.com) to autoprefix your CSS
+  use](http://caniuse.com) to autoprefix your CSS
 
 
 ## Conventions and configuration
