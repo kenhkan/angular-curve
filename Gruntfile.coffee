@@ -27,7 +27,7 @@ module.exports = (grunt) ->
         files: ['package.json', 'bower.json']
         commit: true
         commitMessage: 'chore(release): v%VERSION%'
-        commitFiles: ['package.json', 'bower.json']
+        commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
         createTag: true
         tagName: 'v%VERSION%'
         tagMessage: 'Version %VERSION%'
@@ -125,3 +125,11 @@ module.exports = (grunt) ->
     'copy:404'
     'docker'
   ]
+
+  # Release -- new version!
+  grunt.registerTask 'release', (type) ->
+    grunt.task.run [
+      "bump-only:#{type or 'patch'}"
+      'changelog'
+      'bump-commit'
+    ]
