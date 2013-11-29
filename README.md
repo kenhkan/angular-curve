@@ -77,12 +77,14 @@ This resets the project to its pristine state.
 
 Release a new version. It does a few things:
 
-1. Bump version: see [version bumping](https://github.com/vojtajina/grunt-bump)
-2. Build changelog: see [changelog
+1. Perform a full build
+2. Bump version: see [version bumping](https://github.com/vojtajina/grunt-bump)
+3. Rebuild documentation using Docker
+4. Build changelog: see [changelog
    building](https://github.com/btford/grunt-conventional-changelog)
-3. Make a commit with version number, [semvar style](http://semver.org/)
-4. Tag the commit with version number
-5. Push to remote `origin`
+5. Make a commit with version number, [semvar style](http://semver.org/)
+6. Tag the commit with version number
+7. Push to remote `origin`
 
 
 ## Style
