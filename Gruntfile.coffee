@@ -11,10 +11,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-conventional-changelog'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-bump'
-  grunt.loadNpmTasks 'grunt-exec'
   grunt.loadNpmTasks 'grunt-karma'
-  grunt.loadNpmTasks 'grunt-concurrent'
   grunt.loadNpmTasks 'grunt-docker'
+  grunt.loadNpmTasks 'grunt-shell-spawn'
 
   # Configuration
   grunt.initConfig
@@ -66,12 +65,6 @@ module.exports = (grunt) ->
       ci:
         singleRun: true
 
-    # Concurrently run development and test servers
-    concurrent:
-      options:
-        logConcurrentOutput: true
-      develop: ['exec:watch', 'karma:unit:start']
-
     copy:
       # Copy over index as 404
       '404':
@@ -79,16 +72,21 @@ module.exports = (grunt) ->
         dest: "#{BUILD_DIR}/404.html"
 
     # Execute arbitrary commands
-    exec:
+    shell:
+      options:
+        stdout: true
+        stderr: true
       # Compile without further processing
       compile:
-        cmd: 'node_modules/.bin/brunch build',
+        command: 'node_modules/.bin/brunch build',
       # Build for production
       build:
-        cmd: 'node_modules/.bin/brunch build -P',
+        command: 'node_modules/.bin/brunch build -P',
       # Watch for changes for re-assembly
       watch:
-        cmd: 'node_modules/.bin/brunch watch --server'
+        options:
+          async: true
+        command: 'node_modules/.bin/brunch watch --server'
 
   ## Build tasks
 
@@ -96,32 +94,36 @@ module.exports = (grunt) ->
   # re-assembles on change
   grunt.registerTask 'default', [
     'clean'
-    'concurrent:develop'
+    # Compile once for Karma (`shell:watch` may not have compiled in time as
+    # the it runs concurrently)
+    'shell:compile'
+    # Then run Brunch and Karma
+    'shell:watch'
+    'karma:unit:start'
   ]
 
   # Just run server and watch files
   grunt.registerTask 'server', [
     'clean'
-    'exec:watch'
+    'shell:watch'
   ]
 
-  # Test mode
+  # Test mode. This is for continuous integration. To run tests locally, just
+  # run `grunt`
   grunt.registerTask 'test', [
     'clean'
-    'karma:unit:start'
-  ]
-
-  # Continuous integration mode
-  grunt.registerTask 'ci', [
-    'clean'
-    'exec:build'
+    'shell:compile'
+    # A local webserver may be used for testing
+    'shell:watch'
     'karma:ci:start'
+    # But terminate the local webserver after testing is done
+    'shell:watch:kill'
   ]
 
   # Build -- minify and uglify
   grunt.registerTask 'build', [
     'clean'
-    'exec:build'
+    'shell:build'
     'copy:404'
   ]
 

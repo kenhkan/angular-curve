@@ -3,6 +3,7 @@ describe 'ApplicationController', ->
   scope = null
 
   beforeEach angular.mock.module 'myApplication'
+
   beforeEach inject ($rootScope, $controller) ->
     scope = $rootScope.$new()
     controller = $controller 'ApplicationController',

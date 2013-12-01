@@ -35,8 +35,6 @@
     "grunt-karma": "~0.5.0",
     "grunt-conventional-changelog": "~1.0.0",
     "grunt-bump": "~0.0.6",
-    "grunt-exec": "~0.4.2",
-    "grunt-concurrent": "~0.4.1",
     "jshint-brunch": "~1.6.0",
     "coffeelint-brunch": "~1.5.0",
     "jade": "~0.35.0",
@@ -50,6 +48,7 @@
     "grunt-docker": "0.0.5",
     "glob": "~3.2.7",
     "grunt-contrib-copy": "~0.4.1",
-    "autoprefixer-brunch": "~1.7.3"
+    "autoprefixer-brunch": "~1.7.3",
+    "grunt-shell-spawn": "~0.3.0"
   }
 }
