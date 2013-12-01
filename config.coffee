@@ -16,8 +16,13 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        # Non-spec scripts are application code
-        'app.js': /^app\/(?!.+\.spec\.)/
+        'app.js': (file) ->
+          # Non-spec scripts are application code
+          file.match(/^app\/(?!.+\.spec\.)/)? or
+          [
+            # Include path to specific scripts. Perfect for building AngularJS
+            # modules
+          ].indexOf(file) > -1
         # Specs are compiled into another file by themselves
         'spec.js': /^app\/.+\.spec\./
         # Vendor code
