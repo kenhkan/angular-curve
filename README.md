@@ -21,6 +21,9 @@ page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
 
 ## Installation
 
+This is simply a boilerplate. `git clone` or `git remote add` this to continue.
+And then:
+
 1. I assume you have [Node.js/NPM](http://nodejs.org/)
 2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
 3. Install Pygments so that [Docker](https://github.com/jbt/docker) can
@@ -59,11 +62,12 @@ Karma). Files are updated and served on `localhost:8888`
 
 ### `grunt test`
 
-Test mode: start up Karma at `localhost:9876`
+Test mode. This is like development mode with a local webserver and Karma,
+except that it runs only once. Perfect for continuous integration
 
-### `grunt ci`
-
-Continuous mode: run Karma once for testing on Travis, Jenkins, etc
+Note that Grunt doesn't continue when a task fails. Your test may fail and it
+would quite the task without properly disposing the the local webserver. Run
+`grunt test --force` instead.
 
 ### `grunt build`
 
