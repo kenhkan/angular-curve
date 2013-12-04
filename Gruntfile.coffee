@@ -87,6 +87,9 @@ module.exports = (grunt) ->
         options:
           async: true
         command: 'node_modules/.bin/brunch watch --server'
+      # Synchronously watch for changes for re-assembly
+      syncWatch:
+        command: 'node_modules/.bin/brunch watch --server'
 
   ## Build tasks
 
@@ -105,7 +108,7 @@ module.exports = (grunt) ->
   # Just run server and watch files
   grunt.registerTask 'server', [
     'clean'
-    'shell:watch'
+    'shell:syncWatch'
   ]
 
   # Test mode. This is for continuous integration. To run tests locally, just
