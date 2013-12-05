@@ -40,8 +40,8 @@ exports.config =
         ]
         # Vendor files
         .concat(glob.sync 'bower_components/**/*.js')
-        # Entry point. Put your AngularJS module definition here
-        .concat(glob.sync 'app/index.*')
+        # Entry points. Put your AngularJS module definition here
+        .concat(glob.sync 'app/**/index.*')
         # Common scripts take precedence
         .concat(glob.sync 'app/common/**/*')
 
