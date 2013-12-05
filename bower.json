@@ -13,10 +13,10 @@
     "bower_components"
   ],
   "dependencies": {
-    "lodash": "~2.3.0",
-    "jquery": "~2.0.0",
     "angular": "~1.2.0",
+    "angular-mocks": "~1.2.0",
     "console-polyfill": "~0.1.0",
-    "angular-mocks": "~1.2.0"
+    "jquery": "~2.0.0",
+    "lodash": "~2.3.0"
   }
 }
