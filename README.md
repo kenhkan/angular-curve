@@ -1,9 +1,8 @@
-# AngularJS Development Skeleton for Building on Harp <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-harp-brunch.png)](https://david-dm.org/kenhkan/ng-harp-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-harp-brunch.png)](http://waffle.io/kenhkan/ng-harp-brunch)
+# Angular Curve: The Smoothest Development Framework <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-harp-brunch.png)](https://david-dm.org/kenhkan/ng-harp-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-harp-brunch.png)](http://waffle.io/kenhkan/ng-harp-brunch)
 
 You should be able to develop AngularJS without having to set anything up. This
-skeleton makes it easy to get started and to evolve with your project!
-
-This is buit on [ng-brunch](https://github.com/kenhkan/ng-brunch).
+is an opinionated workflow in developing front-end project with AngularJS. At
+the same time, this tries to employ as many best practices as possible.
 
 
 ## Motivation
@@ -19,6 +18,27 @@ Rather than handling everything as a monolithic asset pipeline, ng-brunch
 offloads the assembly workflow to [Brunch](http://brunch.io/). You need
 additional language support? Check out the [Brunch plugins
 page](https://github.com/brunch/brunch/wiki/Plugins) and you're set.
+
+
+## Workflow
+
+1. Entirely [Grunt](http://gruntjs.com/)-based: you only need one interface
+2. [Bower](http://bower.io/)-powered package management
+3. Dead-easy, drop-in support of your favorite preprocessors and tools with
+   [Brunch](http://brunch.io/). See [supported file types](#supportedfiletypes)
+   for more info
+4. [Heroku](https://www.heroku.com) for staging. This project can host itself
+   on Heroku out of the box
+5. [Harp](https://www.harp.io/) for worry-free production hosting
+
+### Roadmap
+
+1. Auto-push to [Amazon Web Services S3](http://aws.amazon.com/s3/) for
+   production
+2. Integration with [Travis CI](http://travis-ci.com/) for continuous
+   integration
+3. [Yo](https://github.com/yeoman/yo)-based generators to make it
+   [Yeoman](http://yeoman.io/)-complete
 
 
 ## Installation
@@ -73,7 +93,7 @@ would quite the task without properly disposing the the local webserver. Run
 
 ### `grunt build`
 
-Production mode: build the app in production mode (minified and uglified)
+Build the app in production mode (minified and uglified)
 
 ### `grunt clean`
 
