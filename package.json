@@ -1,27 +1,31 @@
 {
-  "name": "ng-brunch",
+  "name": "ng-harp-brunch",
   "version": "0.0.0",
   "description": "Description",
-  "homepage": "https://github.com/kenhkan/ng-brunch",
+  "homepage": "https://github.com/kenhkan/ng-harp-brunch",
   "author": "Kenneth Kan <kenhkan@gmail.com>",
   "licenses": {
     "type": "MIT",
-    "url": "https://github.com/kenhkan/ng-brunch/blob/master/LICENSE"
+    "url": "https://github.com/kenhkan/ng-harp-brunch/blob/master/LICENSE"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenhkan/ng-brunch"
+    "url": "https://github.com/kenhkan/ng-harp-brunch"
+  "engines": {
+    "node": "~0.10.21"
   },
   "scripts": {
     "start": "grunt",
     "test": "grunt karma:ci",
     "build": "grunt build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "harp": "~0.10.1"
+  },
   "devDependencies": {
     "auto-reload-brunch": "~1.7.1",
     "bower": "~1.2.7",
-    "brunch": "~1.7.10",
+    "brunch": "1.7.10",
     "clean-css-brunch": "~1.7.1",
     "coffee-script-brunch": "~1.7.3",
     "coffeelint-brunch": "~1.5.0",
@@ -38,6 +42,7 @@
     "grunt-karma": "~0.5.0",
     "grunt-shell-spawn": "~0.3.0",
     "handlebars-brunch": "~1.7.2",
+    "html2jade": "~0.5.3",
     "jade": "~0.35.0",
     "jade-brunch": "~1.7.2",
     "javascript-brunch": "~1.7.0",
@@ -49,6 +54,7 @@
     "ngmin-uglify-js-brunch": "~1.7.2",
     "sass-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
-    "autoprefixer-brunch": "~1.7.3"
+    "html-brunch": "~1.6.1",
+    "autoprefixer-brunch": "1.7.3"
   }
 }

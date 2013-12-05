@@ -44,6 +44,7 @@ module.exports = (grunt) ->
     # Clean house
     clean:
       build: [BUILD_DIR]
+      index: ["#{BUILD_DIR}/index.html"]
 
     # Watch
     watch:
@@ -68,8 +69,8 @@ module.exports = (grunt) ->
     copy:
       # Copy over index as 404
       '404':
-        src: "#{BUILD_DIR}/index.html"
-        dest: "#{BUILD_DIR}/404.html"
+        src: "#{BUILD_DIR}/index.jade"
+        dest: "#{BUILD_DIR}/404.jade"
 
     # Execute arbitrary commands
     shell:
@@ -90,6 +91,12 @@ module.exports = (grunt) ->
       # Synchronously watch for changes for re-assembly
       syncWatch:
         command: 'node_modules/.bin/brunch watch --server'
+      # Convert HTML to Jade for Harp
+      html2jade:
+        command: 'node_modules/.bin/html2jade app/assets/index.html'
+      # Run Harp server (production mode)
+      harp:
+        command: 'node_modules/.bin/harp server public --port 8888'
 
   ## Build tasks
 
@@ -126,8 +133,10 @@ module.exports = (grunt) ->
   # Build -- minify and uglify
   grunt.registerTask 'build', [
     'clean'
+    'shell:html2jade'
     'shell:build'
     'copy:404'
+    'clean:index'
   ]
 
   # Release -- new version!
@@ -139,3 +148,9 @@ module.exports = (grunt) ->
       'changelog'
       'bump-commit'
     ]
+
+  # Run server in production mode
+  grunt.registerTask 'production', [
+    'build'
+    'shell:harp'
+  ]

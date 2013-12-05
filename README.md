@@ -1,7 +1,9 @@
-# Setup-free AngularJS Development Skeleton <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-brunch.png)](https://david-dm.org/kenhkan/ng-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-brunch.png)](http://waffle.io/kenhkan/ng-brunch)
+# AngularJS Development Skeleton for Building on Harp <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-harp-brunch.png)](https://david-dm.org/kenhkan/ng-harp-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-harp-brunch.png)](http://waffle.io/kenhkan/ng-harp-brunch)
 
 You should be able to develop AngularJS without having to set anything up. This
 skeleton makes it easy to get started and to evolve with your project!
+
+This is buit on [ng-brunch](https://github.com/kenhkan/ng-brunch).
 
 
 ## Motivation

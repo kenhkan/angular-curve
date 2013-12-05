@@ -1,6 +1,6 @@
 {
-  "name": "ng-brunch",
-  "repo": "kenhkan/ng-brunch",
+  "name": "ng-harp-brunch",
+  "repo": "kenhkan/ng-harp-brunch",
   "version": "0.0.0",
   "main": [
     "public/app.js",

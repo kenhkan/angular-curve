@@ -5,6 +5,10 @@ exports.config =
   conventions:
     assets: /^app\/assets\//
 
+    # Use leading double underscores because single underscore is reserved for
+    # Harp
+    ignored: /^__/
+
   # AMD - We use RequireJS
   modules:
     definition: 'amd'
