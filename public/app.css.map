@@ -1,0 +1,1 @@
+{"version":3,"file":"public/app.css","sources":["app/common/theme/theme.styl","app/index.css"],"names":[],"mappings":"AAAA,I;EACE,gB;;;AAEF,Q;AAAA,I;EAEE,mB;CCLF","sourcesContent":["h1\n  font-size 48pt\n\n.center, h1\n  text-align center\n","/* Placeholder for code generation */\n"]}
