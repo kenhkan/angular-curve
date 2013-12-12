@@ -27,7 +27,7 @@ module.exports = (grunt) ->
         commit: true
         commitMessage: 'chore(release): v%VERSION%'
         commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
-        createTag: false
+        createTag: true
         tagName: 'v%VERSION%'
         tagMessage: 'Version %VERSION%'
         push: true
