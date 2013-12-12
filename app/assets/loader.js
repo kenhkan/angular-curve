@@ -29,6 +29,4 @@
       // Load the templates and load the app afterwards regardless of whether
       // templates exist
       require(['templates'], loadApp, loadApp);
-    });
-  });
-})();
+    });});})();
