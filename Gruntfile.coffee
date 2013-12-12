@@ -151,6 +151,9 @@ module.exports = (grunt) ->
     'shell:harp'
   ]
 
+  # Running on Heroku is for staging, so production mode
+  grunt.registerTask 'heroku', 'production'
+
   # Release -- new version!
   grunt.registerTask 'release', (type) ->
     grunt.task.run [
