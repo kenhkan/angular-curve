@@ -90,7 +90,7 @@ module.exports = (grunt) ->
         command: 'node_modules/.bin/html2jade app/assets/index.html'
       # Run Harp server (production mode)
       harp:
-        command: 'node_modules/.bin/harp server public --port 8888'
+        command: "node_modules/.bin/harp server public --port #{process.env.PORT or '8888'}"
 
   ## Build tasks
 
