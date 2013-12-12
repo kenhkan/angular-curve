@@ -1,4 +1,4 @@
-# Angular Curve: The Smoothest Development Framework <br/>[![Dependency Status](https://david-dm.org/kenhkan/ng-harp-brunch.png)](https://david-dm.org/kenhkan/ng-harp-brunch) [![Stories in Ready](https://badge.waffle.io/kenhkan/ng-harp-brunch.png)](http://waffle.io/kenhkan/ng-harp-brunch)
+# Angular Curve: The Smoothest Development Framework <br/>[![Dependency Status](https://david-dm.org/kenhkan/angular-curve.png)](https://david-dm.org/kenhkan/angular-curve) [![Stories in Ready](https://badge.waffle.io/kenhkan/angular-curve.png)](http://waffle.io/kenhkan/angular-curve)
 
 You should be able to develop AngularJS without having to set anything up. This
 is an opinionated workflow in developing front-end project with AngularJS. If
