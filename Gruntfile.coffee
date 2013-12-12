@@ -14,6 +14,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-docker'
   grunt.loadNpmTasks 'grunt-shell-spawn'
   grunt.loadNpmTasks 'grunt-brunch'
+  grunt.loadNpmTasks 'grunt-git-tag'
 
   # Configuration
   grunt.initConfig
@@ -26,8 +27,8 @@ module.exports = (grunt) ->
         files: ['package.json', 'bower.json']
         commit: true
         commitMessage: 'chore(release): v%VERSION%'
-        commitFiles: ['-a']
-        createTag: true
+        commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
+        createTag: false
         tagName: 'v%VERSION%'
         tagMessage: 'Version %VERSION%'
         push: true
@@ -157,6 +158,7 @@ module.exports = (grunt) ->
       'build'
       'docker'
       "bump-only:#{type or 'patch'}"
+      'git-tag'
       'changelog'
       'bump-commit'
     ]

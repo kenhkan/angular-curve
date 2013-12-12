@@ -1,16 +1,16 @@
 {
-  "name": "ng-harp-brunch",
+  "name": "angular-curve",
   "version": "0.0.0",
   "description": "Description",
-  "homepage": "https://github.com/kenhkan/ng-harp-brunch",
+  "homepage": "https://github.com/kenhkan/angular-curve",
   "author": "Kenneth Kan <kenhkan@gmail.com>",
   "licenses": {
     "type": "MIT",
-    "url": "https://github.com/kenhkan/ng-harp-brunch/blob/master/LICENSE"
+    "url": "https://github.com/kenhkan/angular-curve/blob/master/LICENSE"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenhkan/ng-harp-brunch"
+    "url": "https://github.com/kenhkan/angular-curve"
   },
   "engines": {
     "node": "~0.10.21"
@@ -22,9 +22,7 @@
   },
   "dependencies": {
     "harp": "~0.10.1",
-    "grunt-brunch": "0.0.1"
-  },
-  "devDependencies": {
+    "grunt-brunch": "0.0.1",
     "auto-reload-brunch": "~1.7.1",
     "bower": "~1.2.7",
     "brunch": "1.7.10",
@@ -57,6 +55,7 @@
     "sass-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
     "html-brunch": "~1.6.1",
-    "autoprefixer-brunch": "1.7.3"
+    "autoprefixer-brunch": "1.7.3",
+    "grunt-git-tag": "0.0.5"
   }
 }
