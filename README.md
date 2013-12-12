@@ -37,8 +37,11 @@ you're set.
   Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 * Follow [CoffeeScript Style
   Guide](https://github.com/polarmobile/coffeescript-style-guide)
+* Follow [general CSS notes, advice, and
+  guidelines](https://github.com/csswizardry/CSS-Guidelines)
 * Commits follow [AngularJS Git Commit Message
   Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y)
+* Use [IcoMoon](http://icomoon.io/) for application graphic assets in SVG
 
 ### Roadmap
 
