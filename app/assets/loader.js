@@ -16,17 +16,22 @@
 
   // Load the app
   function loadApp() {
-    // Load the app itself
-    require(['app'], function() {
-      // Bootstrap it
-      angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
+    // Load configuration
+    require(['config'], function() {
+      // Load the app itself
+      require(['app'], function() {
+        require(['angular'], function(angular) {
+          // Bootstrap it
+          angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
+        });
+      });
     });
   }
 
   // Load the libraries and templates
-  require(['config'], function() {
-    require(['vendor'], function() {
-      // Load the templates and load the app afterwards regardless of whether
-      // templates exist
-      require(['templates'], loadApp, loadApp);
-    });});})();
+  require(['vendor'], function() {
+    // Load the templates and load the app afterwards regardless of whether
+    // templates exist
+    require(['templates'], loadApp, loadApp);
+  });
+})();
