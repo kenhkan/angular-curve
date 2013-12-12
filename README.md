@@ -219,3 +219,9 @@ Source maps of the compiled files are available in development mode.
   comment (i.e. `/* ... */`)
 * [autoprefixer](https://github.com/lydell/autoprefixer): uses [Can I
   use](http://caniuse.com) to autoprefix your CSS
+
+### Documentation
+
+Documentation is generated into the `doc/` directory. However, generated files
+are not checked into source. You must deal with the output yourself. In the
+future, this will push directly to a configured AWS S3 bucket (#9).
