@@ -1,1 +1,1 @@
-web: node_modules/.bin/grunt production
+web: node_modules/.bin/harp server public --port $PORT
