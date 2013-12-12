@@ -13,6 +13,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-karma'
   grunt.loadNpmTasks 'grunt-docker'
   grunt.loadNpmTasks 'grunt-shell-spawn'
+  grunt.loadNpmTasks 'grunt-brunch'
 
   # Configuration
   grunt.initConfig
@@ -62,28 +63,28 @@ module.exports = (grunt) ->
         src: "#{BUILD_DIR}/index.jade"
         dest: "#{BUILD_DIR}/404.jade"
 
+    # Brunch commands
+    brunch:
+      serve:
+        action: 'serve'
+        port: 8888
+      serveAsync:
+        action: 'serve'
+        port: 8888
+        async: true
+      watch:
+        action: 'watch'
+        port: 8888
+      compile:
+        action: 'compile'
+      build:
+        action: 'build'
+
     # Execute arbitrary commands
     shell:
       options:
         stdout: true
         stderr: true
-      # Compile without further processing
-      compile:
-        command: 'node_modules/.bin/brunch build',
-      # Build for production
-      build:
-        command: 'node_modules/.bin/brunch build -P',
-      # Watch for changes for re-assembly and serve
-      serve:
-        command: 'node_modules/.bin/brunch watch --server'
-      # Watch asynchronously for changes for re-assembly and serve
-      serveAsync:
-        options:
-          async: true
-        command: 'node_modules/.bin/brunch watch --server'
-      # JUST watch for changes for re-assembly
-      watch:
-        command: 'node_modules/.bin/brunch watch'
       # Convert index to Jade for Harp
       html2jade:
         command: 'node_modules/.bin/html2jade app/assets/index.html'
@@ -97,33 +98,31 @@ module.exports = (grunt) ->
   # re-assembles on change
   grunt.registerTask 'default', [
     'clean'
-    'shell:compile' # Compile once for Karma
-    'shell:serveAsync' # ... because this async op will not compile in time
+    'brunch:compile' # Compile once for Karma
+    'brunch:serveAsync' # ... because this async op will not compile in time
     'karma:unit:start'
   ]
 
   # Just run server and watch files to serve
   grunt.registerTask 'server', [
     'clean'
-    'shell:serve'
+    'brunch:serve'
   ]
 
   # Test mode. This is for continuous integration. To run tests locally, just
   # run `grunt`
   grunt.registerTask 'test', [
     'clean'
-    'shell:compile'
-    'shell:serveAsync' # A local webserver may be used for testing
+    'brunch:compile'
+    'brunch:serveAsync' # A local webserver may be used for testing
     'karma:ci:start'
-    'shell:serveAsync:kill' # Remember to terminate the local webserver after
-                            # testing is done
   ]
 
   # JUST watch for file changes. Don't run server
   grunt.registerTask 'watch', [
     'clean'
     'shell:html2jade'
-    'shell:watch'
+    'brunch:watch'
     'copy:404'
     'clean:index'
   ]
@@ -132,7 +131,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'compile', [
     'clean'
     'shell:html2jade'
-    'shell:compile'
+    'brunch:compile'
     'copy:404'
     'clean:index'
   ]
@@ -141,7 +140,7 @@ module.exports = (grunt) ->
   grunt.registerTask 'build', [
     'clean'
     'shell:html2jade'
-    'shell:build'
+    'brunch:build'
     'copy:404'
     'clean:index'
   ]

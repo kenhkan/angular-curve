@@ -21,7 +21,8 @@
     "build": "grunt build"
   },
   "dependencies": {
-    "harp": "~0.10.1"
+    "harp": "~0.10.1",
+    "grunt-brunch": "0.0.1"
   },
   "devDependencies": {
     "auto-reload-brunch": "~1.7.1",
@@ -51,7 +52,7 @@
     "karma": "~0.9.0",
     "less-brunch": "~1.7.0",
     "markdown-brunch": "~1.7.2",
-    "ng-templates-brunch": "0.0.3",
+    "angular-templates-brunch": "~0.0.3",
     "ngmin-uglify-js-brunch": "~1.7.2",
     "sass-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
