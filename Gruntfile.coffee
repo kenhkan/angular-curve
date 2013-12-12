@@ -152,7 +152,7 @@ module.exports = (grunt) ->
   ]
 
   # Running on Heroku is for staging, so production mode
-  grunt.registerTask 'heroku', 'production'
+  grunt.registerTask 'heroku', []
 
   # Release -- new version!
   grunt.registerTask 'release', (type) ->
