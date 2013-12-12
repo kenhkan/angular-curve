@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kenhkan/angular-curve"
+    "url": "https://github.com/kenhkan/angular-curve.git"
   },
   "engines": {
     "node": "~0.10.21"
