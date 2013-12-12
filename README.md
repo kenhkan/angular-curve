@@ -60,9 +60,6 @@ to continue.  And then:
    and a copy of which will be produced upon building to `404.html` to ensure
    not-found errors are catched by AngularJS.
 
-Or, if you're on a POSIX (*nix and Mac) system, run the one-line setup script
-that bootstraps the project and runs a server at `localhost:8888`: `./setup.sh`
-
 
 ## Usage
 
