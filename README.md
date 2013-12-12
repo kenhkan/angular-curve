@@ -43,17 +43,6 @@ you're set.
   Conventions](https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y)
 * Use [IcoMoon](http://icomoon.io/) for application graphic assets in SVG
 
-### Roadmap
-
-* Auto-push to [Amazon Web Services S3](http://aws.amazon.com/s3/) for
-  production
-* Integration with [Travis CI](http://travis-ci.com/) for continuous
-  integration
-* [Yo](https://github.com/yeoman/yo)-based generators to make it
-  [Yeoman](http://yeoman.io/)-complete
-* Store generated documentation in [GitHub
-  Wiki](https://github.com/blog/774-git-powered-wikis-improved)
-
 
 ## Installation
 
@@ -68,7 +57,7 @@ to continue.  And then:
 5. Get Bower deps: `bower install`
 6. Replace `myApplication` with your app name in `app/assets/loader.js` and
    script files under `app/`. This will be automated in a setup script in the
-   future.
+   future (#4).
 7. Your entry point is at `app/assets/index.html`, add any static references
    here and a copy of which will be produced upon building to `404.html` to ensure
    not-found errors are catched by AngularJS.
@@ -103,7 +92,7 @@ except that it runs only once, designed for continuous integration
 
 Note that Grunt doesn't continue when a task fails. Your test may fail and it
 would quite the task without properly disposing the the local webserver. Run
-`grunt test --force` instead. This will be resolved in the future.
+`grunt test --force` instead. This will be resolved in the future (#7).
 
 ### `grunt compile`
 
@@ -204,6 +193,13 @@ steps:
 1. Find the package you want by running `bower search <package-name>`
 2. `bower install --save <package-name>`
 3. That's it! :D
+
+#### In Development
+
+Remember that Bower provides a powerful `bower link` facility. If you are
+including on another Bower-enabled repo, simply run `bower link` in that repo's
+root directory and then `bower link <nameAsInBowerJsonHere>` in the dependent
+directory. Locally linked repos greatly simplify the development process.
 
 ### App file structure
 

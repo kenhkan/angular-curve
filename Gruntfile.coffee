@@ -103,7 +103,6 @@ module.exports = (grunt) ->
   ]
 
   # Just run server and watch files to serve
-  # TODO: we need one with a custom port
   grunt.registerTask 'server', [
     'clean'
     'shell:serve'
@@ -115,8 +114,6 @@ module.exports = (grunt) ->
     'clean'
     'shell:compile'
     'shell:serveAsync' # A local webserver may be used for testing
-    # TODO: make this a multitask and capture for error so server is killed
-    # regardless
     'karma:ci:start'
     'shell:serveAsync:kill' # Remember to terminate the local webserver after
                             # testing is done
