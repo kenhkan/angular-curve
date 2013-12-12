@@ -55,11 +55,9 @@ to continue.  And then:
    generate documentation for you, docco-style: `pip pygments`
 4. Get NPM deps: `npm install`
 5. Get Bower deps: `bower install`
-6. Replace `myApplication` with your app name in `app/assets/loader.js` and
-   script files under `app/`. This will be automated in a setup script in the
-   future (#4).
-7. Your entry point is at `app/assets/index.html`, add any static references
-   here and a copy of which will be produced upon building to `404.html` to ensure
+6. In `app/assets/index.html`, configure the app by specifying your app name,
+   base URL, etc. This file is the entry point. Add any static references here
+   and a copy of which will be produced upon building to `404.html` to ensure
    not-found errors are catched by AngularJS.
 
 Or, if you're on a POSIX (*nix and Mac) system, run the one-line setup script
@@ -89,10 +87,6 @@ Karma). Files are updated and served on `localhost:8888`
 
 Test mode. This is like development mode with a local webserver and Karma,
 except that it runs only once, designed for continuous integration
-
-Note that Grunt doesn't continue when a task fails. Your test may fail and it
-would quite the task without properly disposing the the local webserver. Run
-`grunt test --force` instead. This will be resolved in the future (#7).
 
 ### `grunt compile`
 
