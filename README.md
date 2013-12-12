@@ -219,15 +219,6 @@ future, this will push directly to a configured AWS S3 bucket (#9).
 
 ### Staging on Heroku
 
-angular-curve is Heroku-ready. Brunch dependencies are mostly Node.js-based and
-therefore you don't need any external dependencies. However, SASS is enabled by
-default, so your Heroku instance should have Compass installed.
+angular-curve is Heroku-ready. Simply add a Heroku multipack buildpack:
 
-Luckily, there is a buildpack built for that. Simply run this on your Heroku
-app:
-
-    heroku config:set BUILDPACK_URL=https://github.com/rasky/heroku-buildpack-nodejs-grunt-compass
-
-Or if you manually set SASS off, you may use just the Grunt buildpack instead:
-
-    heroku config:set BUILDPACK_URL=https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
+    heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
