@@ -14,7 +14,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-docker'
   grunt.loadNpmTasks 'grunt-shell-spawn'
   grunt.loadNpmTasks 'grunt-brunch'
-  grunt.loadNpmTasks 'grunt-git-tag'
 
   # Configuration
   grunt.initConfig
@@ -158,7 +157,6 @@ module.exports = (grunt) ->
       'build'
       'docker'
       "bump-only:#{type or 'patch'}"
-      'git-tag'
       'changelog'
       'bump-commit'
     ]
