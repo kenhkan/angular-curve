@@ -8,7 +8,25 @@
     <link rel="stylesheet" href="/app.css"/>
   </head>
   <body>
+    <!-- START CONFIGURATION HERE -->
+
+    <!-- Starting view -->
     <div ng-include="'app/home/index.jade'"></div>
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js" data-main="/loader.js" defer></script>
+
+    <script type="text/javascript">
+      // AngularJS application name
+      window.__APP_NAME = 'myApplication';
+      // Base URL for RequireJS to load files
+      window.__BASE_URL = '/';
+      // Where to bootstrap the application
+      window.__BASE_ELEMENT = document.body;
+      // The top-level application controller name
+      window.__APP_CONTROLLER_NAME = 'ApplicationController';
+    </script>
+
+    <!-- Kickstart the process -->
+    <script type="text/javascript" src="/init.js" defer></script>
+
+    <!-- END CONFIGURATION HERE -->
   </body>
 </html>

@@ -1,12 +1,10 @@
 'use strict';
 
 (function() {
-  // This app's name. Must match what you have in `angular.module()`
-  var APP_NAME = 'myApplication';
-  // Base URL for RequireJS to load files
-  var BASE_URL = '/';
-  // Element on which to load AngularJS
-  var baseElement = document.body;
+  var APP_NAME = window.__APP_NAME;
+  var BASE_URL = window.__BASE_URL;
+  var BASE_ELEMENT = window.__BASE_ELEMENT;
+  var APP_CONTROLLER_NAME = window.__APP_CONTROLLER_NAME;
 
   // RequireJS settings
   require.config({
@@ -14,17 +12,23 @@
   });
 
   // Prepare controller declaration
-  baseElement.setAttribute('ng-controller', 'ApplicationController');
+  BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);
 
-  // Load the libraries
-  require(['require', 'vendor'], function(require, vendor) {
-    // Load the templates
-    require(['require', 'templates'], function(require, templates) {
-      // Load the app itself
-      require(['require', 'app'], function(require, app) {
-        // Bootstrap it
-        angular.bootstrap(baseElement, [APP_NAME]);
-      });
+  // Load the app
+  function loadApp() {
+    // Load the app itself
+    require(['app'], function() {
+      // Bootstrap it
+      angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
+    });
+  }
+
+  // Load the libraries and templates
+  require(['config'], function() {
+    require(['vendor'], function() {
+      // Load the templates and load the app afterwards regardless of whether
+      // templates exist
+      require(['templates'], loadApp, loadApp);
     });
   });
 })();

@@ -21,7 +21,6 @@
     "build": "grunt build"
   },
   "dependencies": {
-    "angular-templates-brunch": "~0.0.3",
     "auto-reload-brunch": "~1.7.1",
     "bower": "~1.2.7",
     "brunch": "1.7.10",
@@ -55,6 +54,7 @@
     "ngmin-uglify-js-brunch": "~1.7.2",
     "sass-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
+    "angular-templates-brunch": "~0.0.3",
     "autoprefixer-brunch": "1.7.3"
   }
 }
