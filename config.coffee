@@ -57,7 +57,7 @@ exports.config =
 
   plugins:
     sass:
-      gem_home: process.env['GEM_HOME'] or '~/.gem'
+      gem_home: process.env['GEM_HOME'] or '~/gems'
 
     coffeescript:
       # Auto-wrap in self-calling function
