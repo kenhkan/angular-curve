@@ -1,20 +1,17 @@
 'use strict';
 
+// Initialize our application
 (function() {
-  var BASE_URL;
+  var APP_NAME = window.__APP_NAME;
+  var BASE_URL = window.__BASE_URL;
+  var BASE_ELEMENT = window.__BASE_ELEMENT;
+  var APP_CONTROLLER_NAME = window.__APP_CONTROLLER_NAME;
 
-  // Use globally available BASE_URL or assume it
-  BASE_URL = window.__BASE_URL || document.URL.match(/https?\:\/\/[^\/]+/)[0] + '/';
-  // Save a copy for reference
-  window.__BASE_URL = BASE_URL;
+  // Prepare application controller
+  BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);
 
-  // Inject RequireJS
-  var requirejsLoader = document.createElement('script');
-  requirejsLoader.type = 'text/javascript';
-  requirejsLoader.setAttribute('data-main', BASE_URL + 'loader.js');
-  requirejsLoader.src = '//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.9/require.min.js';
-  // Do it on next cycle
-  setTimeout(function() {
-    document.head.appendChild(requirejsLoader);
-  }, 0);
+  // Load the libraries, templates, configuration, then the app itself
+  LazyLoad.js(['vendor.js', 'templates.js', 'config.js', 'app.js'], function() {
+    angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
+  });
 })();

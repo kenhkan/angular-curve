@@ -1,40 +1,25 @@
 'use strict';
 
-(function() {
-  var APP_NAME = window.__APP_NAME;
-  var BASE_URL = window.__BASE_URL;
-  var BASE_ELEMENT = window.__BASE_ELEMENT;
-  var APP_CONTROLLER_NAME = window.__APP_CONTROLLER_NAME;
-
-  // RequireJS settings
-  require.config({
-    baseUrl: BASE_URL
-  });
-
-  // Prepare controller declaration
-  BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);
-
-  // Load the app
-  function loadApp() {
-    // Load configuration
-    require(['config'], function() {
-      // Load the app itself
-      require(['app'], function() {
-        // Bootstrap it
-        angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
-      });
-    });
+// Don't block. Load on next cycle.
+window.setTimeout(function() {
+  // Use globally defined BASE_URL or assume it from current URL
+  var BASE_URL = window.__BASE_URL || document.URL.match(/https?\:\/\/[^\/]+/)[0];
+  // Make sure there's a trailing slash
+  if (BASE_URL[BASE_URL.length - 1] !== '/') {
+    BASE_URL = BASE_URL + '/';
   }
+  // Save a copy for reference
+  window.__BASE_URL = BASE_URL;
 
-  // Load the libraries and templates
-  require(['vendor'], function() {
-    require(['angular'], function(angular) {
-      // Angular needs to be global
-      window.angular = angular;
+  // Use LazyLoad
+  var lazyLoad = document.createElement('script');
+  lazyLoad.type = 'text/javascript';
+  lazyLoad.src = '//cdnjs.cloudflare.com/ajax/libs/lazyload/2.0.3/lazyload-min.js';
+  document.head.appendChild(lazyLoad);
 
-      // Load the templates and load the app afterwards regardless of whether
-      // templates exist
-      require(['templates'], loadApp, loadApp);
-    });
-  });
-})();
+  // Then load our init script
+  var loader = document.createElement('script');
+  loader.type = 'text/javascript';
+  loader.src = BASE_URL + 'init.js';
+  document.head.appendChild(loader);
+}, 0);

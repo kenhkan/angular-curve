@@ -55,6 +55,7 @@
     "sass-brunch": "~1.7.0",
     "stylus-brunch": "~1.7.0",
     "angular-templates-brunch": "~0.0.3",
+    "ngmin-uglify-js-brunch": "~1.7.2",
     "autoprefixer-brunch": "1.7.3"
   }
 }

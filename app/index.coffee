@@ -10,7 +10,7 @@ try
 catch err
 
 # Define the module and dependencies
-module = angular.module window.__APP_CONTROLLER_NAME, dependencies
+module = angular.module window.__APP_NAME, dependencies
 
 # Routing
 module.config ($locationProvider) ->
@@ -19,4 +19,4 @@ module.config ($locationProvider) ->
 
 # Entry point
 module.run (titleService) ->
-  titleService.setSuffix " | #{window.__APP_CONTROLLER_NAME}"
+  titleService.setSuffix " | #{window.__APP_NAME}"

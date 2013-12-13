@@ -1,12 +1,12 @@
-describe 'ApplicationController', ->
+describe window.__APP_CONTROLLER_NAME, ->
   controller = null
   scope = null
 
-  beforeEach angular.mock.module window.__APP_CONTROLLER_NAME
+  beforeEach angular.mock.module window.__APP_NAME
 
   beforeEach inject ($rootScope, $controller) ->
     scope = $rootScope.$new()
-    controller = $controller 'ApplicationController',
+    controller = $controller window.__APP_CONTROLLER_NAME,
       $scope: scope
 
   it 'says hello', ->
