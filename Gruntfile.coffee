@@ -151,8 +151,8 @@ module.exports = (grunt) ->
     'shell:harp'
   ]
 
-  # Build on heroku
-  grunt.registerTask 'heroku', ['build']
+  # Simply compile on heroku
+  grunt.registerTask 'heroku', ['compile']
 
   # Release -- new version!
   grunt.registerTask 'release', (type) ->
