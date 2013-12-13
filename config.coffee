@@ -30,7 +30,7 @@ exports.config =
         # Specs are compiled into another file by themselves
         'spec.js': /^app\/.+\.spec\./
         # Vendor code
-        'vendor.js': /^(bower_components|vendor)\/(?!.+\.spec\.)/
+        'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
         before: [
           # Essential libraries
@@ -49,7 +49,7 @@ exports.config =
     stylesheets:
       joinTo:
         'app.css': /^app/
-        'vendor.css': /^(bower_components|vendor)/
+        'vendor.css': /^(bower_components)/
 
     templates:
       joinTo:
