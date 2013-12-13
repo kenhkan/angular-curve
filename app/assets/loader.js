@@ -20,18 +20,21 @@
     require(['config'], function() {
       // Load the app itself
       require(['app'], function() {
-        require(['angular'], function(angular) {
-          // Bootstrap it
-          angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
-        });
+        // Bootstrap it
+        angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
       });
     });
   }
 
   // Load the libraries and templates
   require(['vendor'], function() {
-    // Load the templates and load the app afterwards regardless of whether
-    // templates exist
-    require(['templates'], loadApp, loadApp);
+    require(['angular'], function(angular) {
+      // Angular needs to be global
+      window.angular = angular;
+
+      // Load the templates and load the app afterwards regardless of whether
+      // templates exist
+      require(['templates'], loadApp, loadApp);
+    });
   });
 })();
