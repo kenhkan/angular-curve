@@ -56,9 +56,6 @@ exports.config =
         'templates.js': /^app/
 
   plugins:
-    sass:
-      gem_home: process.env['GEM_HOME'] or '~/gems'
-
     coffeescript:
       # Auto-wrap in self-calling function
       bare: false
