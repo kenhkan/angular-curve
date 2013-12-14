@@ -4,7 +4,7 @@
 (function() {
   function init() {
     // If LazyLoad isn't available yet, check again later
-    if (LazyLoad === void 0) {
+    if (window.LazyLoad === void 0) {
       setTimeout(init, 0);
       return;
     }
@@ -18,7 +18,7 @@
     BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);
 
     // Load the libraries, templates, configuration, then the app itself
-    LazyLoad.js(['vendor.js', 'templates.js', 'config.js', 'app.js'], function() {
+    window.LazyLoad.js(['vendor.js', 'templates.js', 'config.js', 'app.js'], function() {
       angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
 
       // We have loaded
