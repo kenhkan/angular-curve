@@ -2,6 +2,11 @@
 
 // Don't block. Load on next cycle.
 window.setTimeout(function() {
+  // Do not continue if we've already loaded
+  if (window.__APP_LOADED === true) {
+    return;
+  }
+
   // Use globally defined BASE_URL or assume it from current URL
   var BASE_URL = window.__BASE_URL || document.URL.match(/https?\:\/\/[^\/]+/)[0];
   // Make sure there's a trailing slash

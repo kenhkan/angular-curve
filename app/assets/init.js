@@ -13,5 +13,8 @@
   // Load the libraries, templates, configuration, then the app itself
   LazyLoad.js(['vendor.js', 'templates.js', 'config.js', 'app.js'], function() {
     angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
+
+    // We have loaded
+    window.__APP_LOADED = true;
   });
 })();
