@@ -143,9 +143,27 @@ After having set up the project, the file structure would look like:
     README.md -> This document
 
 
-## Conventions and configuration
+## Execution order
 
-### Supported file types
+This application lazy loads everything necessary. Here's what it does to
+bootstrap the application:
+
+1. `index.html` sets all the required parameters specific to the app
+2. `loader.js` then sets forth basic bootstrapping parameters like the base
+   URL, make the [LazyLoad](https://github.com/rgrove/lazyload) library available,
+   and load `init.js` lazily
+3. `init.js` sets more parameters and loads `vendor.js`, `templates.js`,
+   `config.js`, and `app.js`, in that order
+4. `vendor.js`, `templates.js`, and `app.js` are compiled scripts from the
+   source and `config.js` is a custom script in `app/assets/` to allow
+   configuration before the application loads.
+5. AngularJS then bootstraps the application on the provided base element,
+   default to the body
+6. At this point, AngularJS has control and `index.coffee` is run, then
+   `application.coffee` and so forth
+
+
+## Supported file types
 
 Anything found in the Brunch plugin ecosystem is supported! By default this
 repo supports:
@@ -175,7 +193,8 @@ Under the `app` directory:
 * Markup files are compiled into one template-containing JavaScript file
   `public/templates.js`
 
-### Package management
+
+## Package management
 
 Because developing in Angular.js requires many external libraries, package
 management should be automated using [Bower](http://bower.io/). Follow these
@@ -185,12 +204,14 @@ steps:
 2. `bower install --save <package-name>`
 3. That's it! :D
 
-#### In Development
+
+### In Development
 
 Remember that Bower provides a powerful `bower link` facility. If you are
 including on another Bower-enabled repo, simply run `bower link` in that repo's
 root directory and then `bower link <nameAsInBowerJsonHere>` in the dependent
 directory. Locally linked repos greatly simplify the development process.
+
 
 ### App file structure
 
@@ -200,7 +221,8 @@ as-is to the top-level directory under `public/`.
 
 Source maps of the compiled files are available in development mode.
 
-### Feature Notes
+
+## Feature Notes
 
 * [compass](http://compass-style.org/): configure Compass by defining
   `$GEM_HOME` on your command-line or in `config.coffee`. Check
@@ -211,13 +233,15 @@ Source maps of the compiled files are available in development mode.
 * [autoprefixer](https://github.com/lydell/autoprefixer): uses [Can I
   use](http://caniuse.com) to autoprefix your CSS
 
-### Documentation
+
+## Documentation
 
 Documentation is generated into the `doc/` directory. However, generated files
 are not checked into source. You must deal with the output yourself. In the
 future, this will push directly to a configured AWS S3 bucket (#9).
 
-### Staging on Heroku
+
+## Staging on Heroku
 
 angular-curve is Heroku-ready. Simply add a Heroku multipack buildpack:
 
