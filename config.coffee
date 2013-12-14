@@ -9,10 +9,10 @@ exports.config =
     # Harp
     ignored: /^__/
 
-  # AMD - We use RequireJS
+  # We use AngularJS' own DI mechanism
   modules:
-    definition: 'amd'
-    wrapper: 'amd'
+    definition: false
+    wrapper: false
 
   server:
     port: 8888
