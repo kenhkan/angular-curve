@@ -207,7 +207,6 @@ steps:
 2. `bower install --save <package-name>`
 3. That's it! :D
 
-
 ### In Development
 
 Remember that Bower provides a powerful `bower link` facility. If you are
@@ -216,7 +215,7 @@ root directory and then `bower link <nameAsInBowerJsonHere>` in the dependent
 directory. Locally linked repos greatly simplify the development process.
 
 
-### App file structure
+## App file structure
 
 There is no convention here. Scripts, styles, and markups are compiled to
 `public/`. Anything under `assets/` is treated as assets and are transferred
