@@ -18,7 +18,13 @@
     BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);
 
     // Load the libraries, templates, configuration, then the app itself
-    window.LazyLoad.js(['vendor.js', 'templates.js', 'config.js', 'app.js'], function() {
+    var paths = [
+      BASE_URL + 'vendor.js',
+      BASE_URL + 'templates.js',
+      BASE_URL + 'config.js',
+      BASE_URL + 'app.js'
+    ]
+    window.LazyLoad.js(paths, function() {
       angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
 
       // We have loaded

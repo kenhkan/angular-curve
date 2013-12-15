@@ -10,7 +10,8 @@
   <body>
     <!-- START CONFIGURATION HERE -->
 
-    <!-- Starting view -->
+    <!-- Starting view. Must point to an existing template, otherwise an error
+         would occur -->
     <div ng-include="'app/home/index.jade'"></div>
 
     <script type="text/javascript">
@@ -24,9 +25,9 @@
       window.__APP_CONTROLLER_NAME = 'ApplicationController';
     </script>
 
-    <!-- Kickstart the process -->
-    <script type="text/javascript" src="/loader.js" defer></script>
-
     <!-- END CONFIGURATION HERE -->
+
+    <!-- Kickstart the process -->
+    <script type="text/javascript" src="/loader.js"></script>
   </body>
 </html>
