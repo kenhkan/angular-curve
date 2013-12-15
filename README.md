@@ -128,6 +128,9 @@ After having set up the project, the file structure would look like:
     app/ -> Anything specific to the app goes here
     app/assets/ -> Anything here is copied over to top-level directory as-is.
     app/assets/index.html -> The entry point index page
+    app/assets/config.js -> This script is executed before AngularJS is loaded
+    app/assets/init.js -> This is the script that loads the application
+    app/assets/loader.js -> This is the bootstrapper that starts it all
     app/common/ -> Included before everything else in `app/`
     app/application.coffee -> The top-level ApplicationController
     app/application.spec.coffee -> Test cases for ApplicationController
@@ -143,7 +146,7 @@ After having set up the project, the file structure would look like:
     README.md -> This document
 
 
-## Execution order
+## Bootstrapping order
 
 This application lazy loads everything necessary. Here's what it does to
 bootstrap the application:

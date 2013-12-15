@@ -43,7 +43,10 @@ module.exports = (grunt) ->
 
     # Clean house
     clean:
-      build: [BUILD_DIR]
+      build: [
+        BUILD_DIR
+        "#{SOURCE_DIR}/assets/index.jade"
+      ]
       index: ["#{BUILD_DIR}/index.html"]
 
     # Testing
