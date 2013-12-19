@@ -195,6 +195,8 @@ Under the `app` directory:
 * Style files are compiled into one CSS file `public/app.css`
 * Markup files are compiled into one template-containing JavaScript file
   `public/templates.js`
+* Do _NOT_ name README as `README.md`. _Always_ name it as just `README`
+  because `*.md` are compiled into the templates by the Brunch engine.
 
 
 ## Package management
