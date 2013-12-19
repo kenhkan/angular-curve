@@ -104,8 +104,8 @@ This resets the project to its pristine state.
 
 ### `grunt production`
 
-Run server as if it is in production. The opinionated angular-curve assumes
-production will be a [Harp app](harp.io).
+Run server as if it is in production. It assumes production will be a [Harp
+app](harp.io).
 
 ### `grunt release`
 
@@ -245,6 +245,6 @@ future, this will push directly to a configured AWS S3 bucket (#9).
 
 ## Staging on Heroku
 
-angular-curve is Heroku-ready. Simply add a Heroku multipack buildpack:
+This project is Heroku-ready. Simply add a Heroku multipack buildpack:
 
     heroku config:set BUILDPACK_URL=https://github.com/ddollar/heroku-buildpack-multi
