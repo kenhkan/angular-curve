@@ -3,9 +3,9 @@
   "repo": "kenhkan/angular-curve",
   "version": "0.0.0",
   "main": [
-    "public/app.js",
-    "public/templates.js",
-    "public/app.css"
+    "public/js/app.js",
+    "public/js/templates.js",
+    "public/css/app.css"
   ],
   "ignore": [
     "**/.*",
