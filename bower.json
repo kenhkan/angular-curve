@@ -3,9 +3,9 @@
   "repo": "kenhkan/angular-curve",
   "version": "0.0.0",
   "main": [
-    "public/app.js",
-    "public/templates.js",
-    "public/app.css"
+    "public/js/app.js",
+    "public/js/templates.js",
+    "public/css/app.css"
   ],
   "ignore": [
     "**/.*",
@@ -13,27 +13,10 @@
     "bower_components"
   ],
   "dependencies": {
-    "angular": "1.2.5",
-    "angular-bootstrap": "~0.5.0",
-    "angular-sanitize": "1.2.5",
-    "angular-resource": "1.2.5",
-    "angular-route": "1.2.5",
-    "angular-cookies": "1.2.5",
-    "angular-mocks": "1.2.5",
-    "bootstrap-less": "~2.3.2",
-    "bootstrap-less-themes": "https://github.com/angular-brunch/bootstrap-less-themes.git",
+    "angular": "~1.2.0",
+    "angular-mocks": "~1.2.0",
     "console-polyfill": "~0.1.0",
-    "jquery": "~2.0.3",
+    "jquery": "~2.0.0",
     "lodash": "~2.3.0"
-  },
-  "overrides": {
-    "bootstrap-less": {
-      "ignore": [
-        "*"
-      ]
-    },
-    "angular-mocks": {
-      "main": "README.md"
-    }
   }
 }
