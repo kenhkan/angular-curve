@@ -5,6 +5,9 @@ module.exports = (grunt) ->
   BUILD_DIR = 'public'
   DOC_DIR = 'doc'
 
+  # Port to use to run the local webserver
+  port = process.env.LOCAL_PORT or 8888
+
   # Load Grunt tasks
   grunt.loadNpmTasks 'grunt-contrib-clean'
   grunt.loadNpmTasks 'grunt-contrib-copy'
@@ -70,14 +73,14 @@ module.exports = (grunt) ->
     brunch:
       serve:
         action: 'serve'
-        port: 8888
+        port: port
       serveAsync:
         action: 'serve'
-        port: 8888
+        port: port
         async: true
       watch:
         action: 'watch'
-        port: 8888
+        port: port
       compile:
         action: 'compile'
       build:
@@ -93,7 +96,7 @@ module.exports = (grunt) ->
         command: 'node_modules/.bin/html2jade app/assets/index.html'
       # Run Harp server (production mode)
       harp:
-        command: "node_modules/.bin/harp server public --port #{process.env.PORT or '8888'}"
+        command: "node_modules/.bin/harp server public --port #{process.env.PORT or port}"
 
   ## Build tasks
 
