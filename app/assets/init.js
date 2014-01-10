@@ -19,10 +19,10 @@
 
     // Load the libraries, templates, configuration, then the app itself
     var paths = [
-      BASE_URL + 'vendor.js',
-      BASE_URL + 'templates.js',
+      BASE_URL + '/js/vendor.js',
+      BASE_URL + '/js/templates.js',
       BASE_URL + 'config.js',
-      BASE_URL + 'app.js'
+      BASE_URL + '/js/app.js'
     ]
     window.LazyLoad.js(paths, function() {
       angular.bootstrap(BASE_ELEMENT, [APP_NAME]);
