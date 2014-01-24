@@ -1,5 +1,11 @@
 'use strict';
 
+// What do you mean we don't have a configuration
+// object? Then make one!
+window.CURVE_APP = window.CURVE_APP || {
+  name: 'Application'
+};
+
 // Don't block. Load on next cycle.
 window.setTimeout(function() {
   // Make a shortcut to the configuration object

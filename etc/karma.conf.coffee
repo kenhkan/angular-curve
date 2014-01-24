@@ -1,26 +1,23 @@
 module.exports = (config) ->
   config.set
-    # base path, that will be used to resolve files and exclude
+    # Base path, that will be used to resolve files and exclude
     basePath: '..'
 
-    # required frameworks
+    # Required frameworks
     frameworks: [
       'jasmine'
     ]
 
-    # list of files / patterns to load in the browser
+    # Load the entire thing
     files: [
-      # Dependencies
+      'public/loader.js'
       'public/vendor.js'
-      # Templates
       'public/templates.js'
-      # Application code
       'public/app.js'
-      # Spec code
       'public/spec.js'
     ]
 
-    # files to preprocess before testing
+    # Files to preprocess before testing
     preprocessors:
       '**/*.coffee': ['coffee']
 
@@ -31,21 +28,21 @@ module.exports = (config) ->
       transformPath: (path) ->
         return path.replace /\.coffee$/, '.js'
 
-    # use dots reporter, as travis terminal does not support escaping sequences
-    # possible values: 'dots', 'progress'
+    # Use dots reporter, as travis terminal does not support escaping sequences
+    # Possible values: 'dots', 'progress'
     # CLI --reporters progress
     reporters: ['dots']
 
-    # web server port
+    # Web server port
     # CLI --port 9876
     port: 9876
 
-    # enable / disable colors in the output (reporters and logs)
+    # Enable / disable colors in the output (reporters and logs)
     # CLI --colors --no-colors
     colors: true
 
-    # level of logging
-    # possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+    # Level of logging
+    # Possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     # CLI --log-level debug
     logLevel: config.LOG_INFO
 
@@ -72,6 +69,6 @@ module.exports = (config) ->
     # CLI --single-run --no-single-run
     singleRun: false
 
-    # report which specs are slower than 500ms
+    # Report which specs are slower than 500ms
     # CLI --report-slower-than 500
     reportSlowerThan: 500
