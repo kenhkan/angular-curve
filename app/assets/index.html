@@ -1,28 +1,33 @@
 <!DOCTYPE html>
+<!--
+  *** NOTE ***
+
+  This file should NOT contain any application code because doing so would make
+  testing very difficult. This file serves the purpose of jumpstarting the
+  application and that is it. Do not pack anything else in here.
+-->
 <html>
   <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <link rel="favicon.ico" href="favicon.ico"/>
+    <!-- CSS from vendor libraries -->
     <link rel="stylesheet" href="css/vendor.css"/>
+    <!-- CSS from the application -->
     <link rel="stylesheet" href="css/app.css"/>
   </head>
   <body>
     <!-- START CONFIGURATION HERE -->
 
-    <!-- Starting view. Must point to an existing template, otherwise an error
-         would occur -->
+    <!-- The top-level view. Must point to an existing template, otherwise an
+         error would occur. -->
     <div ng-include="'app/home/index.jade'"></div>
 
     <script type="text/javascript">
-      // AngularJS application name
-      window.__APP_NAME = 'myApplication';
-      // Base URL for RequireJS to load files
+      // Base URL to load the rest of the files. Default to the current domain
       window.__BASE_URL = null;
-      // Where to bootstrap the application
-      window.__BASE_ELEMENT = document.body;
-      // The top-level application controller name
-      window.__APP_CONTROLLER_NAME = 'ApplicationController';
+      // Where to bootstrap the application; Default to `document.body`
+      window.__BASE_ELEMENT = null;
     </script>
 
     <!-- END CONFIGURATION HERE -->

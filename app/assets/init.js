@@ -9,10 +9,8 @@
       return;
     }
 
-    var APP_NAME = window.__APP_NAME;
     var BASE_URL = window.__BASE_URL;
     var BASE_ELEMENT = window.__BASE_ELEMENT;
-    var APP_CONTROLLER_NAME = window.__APP_CONTROLLER_NAME;
 
     // Prepare application controller
     BASE_ELEMENT.setAttribute('ng-controller', APP_CONTROLLER_NAME);

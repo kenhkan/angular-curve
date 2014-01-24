@@ -1,5 +1,5 @@
-module = angular.module window.__APP_NAME
+module = angular.module 'MyApplication'
 
 # Root controller
-module.controller window.__APP_CONTROLLER_NAME, ($scope, $location) ->
+module.controller 'MyApplicationController', ($scope, $location) ->
   $scope.message = 'Hello World!'
