@@ -121,7 +121,6 @@ module.exports = (grunt) ->
   # JUST watch for file changes. Don't run server
   grunt.registerTask 'watch', [
     'clean'
-    'shell:html2jade'
     'brunch:watch'
     'copy:404'
     'clean:index'
@@ -130,7 +129,6 @@ module.exports = (grunt) ->
   # JUST compile, nothing else
   grunt.registerTask 'compile', [
     'clean'
-    'shell:html2jade'
     'brunch:compile'
     'copy:404'
     'clean:index'
@@ -139,7 +137,6 @@ module.exports = (grunt) ->
   # Build -- minify and uglify
   grunt.registerTask 'build', [
     'clean'
-    'shell:html2jade'
     'brunch:build'
     'copy:404'
     'clean:index'
