@@ -1,5 +1,5 @@
 module = angular.module 'MyApplication'
 
 # Root controller
-module.controller 'MyApplicationController', ($scope, $location) ->
+module.controller 'ApplicationController', ($scope, $location) ->
   $scope.message = 'Hello World!'

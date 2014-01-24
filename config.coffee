@@ -16,7 +16,7 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        'js/app.js': (file) ->
+        'app.js': (file) ->
           # Non-spec scripts are application code
           file.match(/^app\/(?!.+\.spec\.)/)? or
           [
@@ -24,9 +24,9 @@ exports.config =
             # modules
           ].indexOf(file) > -1
         # Specs are compiled into another file by themselves
-        'js/spec.js': /^app\/.+\.spec\./
+        'spec.js': /^app\/.+\.spec\./
         # Vendor code
-        'js/vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
+        'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
         before: [
           # Essential libraries
@@ -44,12 +44,12 @@ exports.config =
 
     stylesheets:
       joinTo:
-        'css/app.css': /^app/
-        'css/vendor.css': /^(bower_components)/
+        'app.css': /^app/
+        'vendor.css': /^(bower_components)/
 
     templates:
       joinTo:
-        'js/templates.js': /^app/
+        'templates.js': /^app/
 
   plugins:
     coffeescript:
@@ -58,7 +58,7 @@ exports.config =
 
     concat:
       files:
-        'public/js/app.js':
-          sources: ['public/js/templates.js', 'public/js/app.js']
+        'public/app.js':
+          sources: ['public/templates.js', 'public/app.js']
           toRemove: true
           productionOnly: true

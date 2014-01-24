@@ -7,14 +7,45 @@ window.setTimeout(function() {
     return;
   }
 
-  // Use globally defined BASE_URL or assume it from current URL
+  // Use globally defined BASE_URL or assume it from current domain
   var BASE_URL = window.__BASE_URL || document.URL.match(/https?\:\/\/[^\/]+/)[0];
   // Make sure there's a trailing slash
   if (BASE_URL[BASE_URL.length - 1] !== '/') {
     BASE_URL = BASE_URL + '/';
   }
-  // Save a copy for reference
-  window.__BASE_URL = BASE_URL;
+
+  // Default base element to body
+  var BASE_ELEMENT = window.__BASE_ELEMENT || document.body;
+
+  // Initialize our application
+  function init() {
+    // If LazyLoad isn't available yet, check again later
+    if (window.LazyLoad === void 0) {
+      setTimeout(init, 0);
+      return;
+    }
+
+    // Always have an application controller at root
+    BASE_ELEMENT.setAttribute('ng-controller', 'ApplicationController');
+
+    // Load all the styles
+    window.LazyLoad.css([
+      BASE_URL + '/vendor.css',
+      BASE_URL + '/app.css'
+    ]);
+
+    // Load all the scripts
+    window.LazyLoad.js([
+      BASE_URL + '/vendor.js',
+      BASE_URL + '/templates.js',
+      BASE_URL + '/app.js'
+    ], function() {
+      // We have loaded
+      window.__APP_LOADED = true;
+      // Bootstrap AngularJS when we're ready
+      angular.bootstrap(BASE_ELEMENT, [__APP_NAME]);
+    });
+  }
 
   // Use LazyLoad
   var lazyLoad = document.createElement('script');
@@ -23,8 +54,5 @@ window.setTimeout(function() {
   document.head.appendChild(lazyLoad);
 
   // Then load our init script
-  var loader = document.createElement('script');
-  loader.type = 'text/javascript';
-  loader.src = BASE_URL + 'init.js';
-  document.head.appendChild(loader);
+  setTimeout(init, 0);
 }, 0);

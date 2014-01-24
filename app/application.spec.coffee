@@ -1,4 +1,4 @@
-describe 'MyApplicationController', ->
+describe 'ApplicationController', ->
   controller = null
   scope = null
 
@@ -6,7 +6,7 @@ describe 'MyApplicationController', ->
 
   beforeEach inject ($rootScope, $controller) ->
     scope = $rootScope.$new()
-    controller = $controller 'MyApplicationController',
+    controller = $controller 'ApplicationController',
       $scope: scope
 
   it 'says hello', ->
