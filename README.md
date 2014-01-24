@@ -235,6 +235,12 @@ Source maps of the compiled files are available in development mode.
   comment (i.e. `/* ... */` in JavaScript and `### ... ###` in CoffeeScript)
 * [autoprefixer](https://github.com/lydell/autoprefixer): uses [Can I
   use](http://caniuse.com) to autoprefix your CSS
+* [cache
+  manifest](https://developer.mozilla.org/en-US/docs/HTML/Using_the_application_cache#The_cache_manifest_file):
+  you should always include a manifest so that the browser knows what to cache.
+  angular-curve uses
+  [appcache-brunch](https://github.com/brunch/appcache-brunch#settings) to
+  build the manifest
 
 
 ## Documentation
