@@ -6,7 +6,7 @@ module.exports = (grunt) ->
   DOC_DIR = 'doc'
 
   # Port to use to run the local webserver
-  port = process.env.LOCAL_PORT or 8888
+  PORT = process.env.LOCAL_PORT or 8888
 
   # Load Grunt tasks
   grunt.loadNpmTasks 'grunt-contrib-clean'
@@ -73,14 +73,14 @@ module.exports = (grunt) ->
     brunch:
       serve:
         action: 'serve'
-        port: port
+        port: PORT
       serveAsync:
         action: 'serve'
-        port: port
+        port: PORT
         async: true
       watch:
         action: 'watch'
-        port: port
+        port: PORT
       compile:
         action: 'compile'
       build:
