@@ -55,3 +55,10 @@ exports.config =
     coffeescript:
       # Auto-wrap in self-calling function
       bare: false
+
+    concat:
+      files:
+        'public/js/app.js':
+          sources: ['public/js/templates.js', 'public/js/app.js']
+          toRemove: true
+          productionOnly: true
