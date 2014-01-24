@@ -32,7 +32,6 @@ you're set.
   for more info
 * [Heroku](https://www.heroku.com) for staging. This project can host itself
   on Heroku out of the box
-* [Harp](https://www.harp.io/) for worry-free production hosting
 * Follow [JavaScript Style
   Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
 * Follow [CoffeeScript Style
@@ -101,11 +100,6 @@ Build the app in production mode (compile + minified + uglified)
 ### `grunt clean`
 
 This resets the project to its pristine state.
-
-### `grunt production`
-
-Run server as if it is in production. It assumes production will be a [Harp
-app](harp.io).
 
 ### `grunt release`
 

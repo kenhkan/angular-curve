@@ -5,10 +5,6 @@ exports.config =
   conventions:
     assets: /^app\/assets\//
 
-    # Use leading double underscores because single underscore is reserved for
-    # Harp
-    ignored: /^__/
-
   # We use AngularJS' own DI mechanism
   modules:
     definition: false

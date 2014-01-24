@@ -66,8 +66,8 @@ module.exports = (grunt) ->
     copy:
       # Copy over index as 404
       '404':
-        src: "#{BUILD_DIR}/index.jade"
-        dest: "#{BUILD_DIR}/404.jade"
+        src: "#{BUILD_DIR}/index.html"
+        dest: "#{BUILD_DIR}/404.html"
 
     # Brunch commands
     brunch:
@@ -91,12 +91,6 @@ module.exports = (grunt) ->
       options:
         stdout: true
         stderr: true
-      # Convert index to Jade for Harp
-      html2jade:
-        command: 'node_modules/.bin/html2jade app/assets/index.html'
-      # Run Harp server (production mode)
-      harp:
-        command: "node_modules/.bin/harp server public --port #{process.env.PORT or port}"
 
   ## Build tasks
 
@@ -149,12 +143,6 @@ module.exports = (grunt) ->
     'brunch:build'
     'copy:404'
     'clean:index'
-  ]
-
-  # Run server in production mode
-  grunt.registerTask 'production', [
-    'build'
-    'shell:harp'
   ]
 
   # Simply compile on heroku
