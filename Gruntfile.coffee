@@ -51,6 +51,7 @@ module.exports = (grunt) ->
         "#{SOURCE_DIR}/assets/index.jade"
       ]
       index: ["#{BUILD_DIR}/index.html"]
+      spec: ["#{BUILD_DIR}/spec.js"]
 
     # Testing
     karma:
@@ -140,6 +141,7 @@ module.exports = (grunt) ->
     'brunch:build'
     'copy:404'
     'clean:index'
+    'clean:spec'
   ]
 
   # Simply compile on heroku
