@@ -3,9 +3,9 @@
   "repo": "kenhkan/angular-curve",
   "version": "0.0.0",
   "main": [
-    "public/js/app.js",
-    "public/js/templates.js",
-    "public/css/app.css"
+    "public/app.js",
+    "public/templates.js",
+    "public/app.css"
   ],
   "ignore": [
     "**/.*",
@@ -14,9 +14,11 @@
   ],
   "dependencies": {
     "angular": "~1.2.0",
-    "angular-mocks": "~1.2.0",
-    "console-polyfill": "~0.1.0",
     "jquery": "~2.0.0",
     "lodash": "~2.3.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.2.0",
+    "console-polyfill": "~0.1.0"
   }
 }
