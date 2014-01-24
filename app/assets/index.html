@@ -20,12 +20,15 @@
     <div ng-include="'app/home/index.jade'"></div>
 
     <script type="text/javascript">
-      // The application name
-      window.__APP_NAME = 'MyApplication';
-      // Base URL to load the rest of the files. Default to the current domain
-      window.__BASE_URL = null;
-      // Where to bootstrap the application; Default to `document.body`
-      window.__BASE_ELEMENT = null;
+      // Configuration object
+      window.CURVE_APP = {
+        // The application name
+        name: 'MyApplication',
+        // Base URL to load the rest of the files. Default to the current domain
+        base: null,
+        // Where to bootstrap the application; Default to `document.body`
+        element: null
+      };
     </script>
 
     <!-- END CONFIGURATION HERE -->

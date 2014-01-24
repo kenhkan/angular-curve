@@ -2,20 +2,23 @@
 
 // Don't block. Load on next cycle.
 window.setTimeout(function() {
+  // Make a shortcut to the configuration object
+  var curve = window.CURVE_APP;
+
   // Do not continue if we've already loaded
-  if (window.__APP_LOADED === true) {
+  if (curve._hasLoaded === true) {
     return;
   }
 
-  // Use globally defined BASE_URL or assume it from current domain
-  var BASE_URL = window.__BASE_URL || document.URL.match(/https?\:\/\/[^\/]+/)[0];
+  // Use globally defined curve.base or assume it from current domain
+  curve.base = curve.base || document.URL.match(/https?\:\/\/[^\/]+/)[0];
   // Make sure there's a trailing slash
-  if (BASE_URL[BASE_URL.length - 1] !== '/') {
-    BASE_URL = BASE_URL + '/';
+  if (curve.base[curve.base.length - 1] !== '/') {
+    curve.base = curve.base + '/';
   }
 
   // Default base element to body
-  var BASE_ELEMENT = window.__BASE_ELEMENT || document.body;
+  curve.element = curve.element || document.body;
 
   // Initialize our application
   function init() {
@@ -26,24 +29,24 @@ window.setTimeout(function() {
     }
 
     // Always have an application controller at root
-    BASE_ELEMENT.setAttribute('ng-controller', 'ApplicationController');
+    curve.element.setAttribute('ng-controller', 'ApplicationController');
 
     // Load all the styles
     window.LazyLoad.css([
-      BASE_URL + '/vendor.css',
-      BASE_URL + '/app.css'
+      curve.base + '/vendor.css',
+      curve.base + '/app.css'
     ]);
 
     // Load all the scripts
     window.LazyLoad.js([
-      BASE_URL + '/vendor.js',
-      BASE_URL + '/templates.js',
-      BASE_URL + '/app.js'
+      curve.base + '/vendor.js',
+      curve.base + '/templates.js',
+      curve.base + '/app.js'
     ], function() {
       // We have loaded
-      window.__APP_LOADED = true;
+      curve._hasLoaded = true;
       // Bootstrap AngularJS when we're ready
-      angular.bootstrap(BASE_ELEMENT, [__APP_NAME]);
+      angular.bootstrap(curve.element, [curve.name]);
     });
   }
 

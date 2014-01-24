@@ -10,7 +10,7 @@ try
 catch err
 
 # Define the module and dependencies
-module = angular.module 'MyApplication', dependencies
+module = angular.module window.CURVE_APP.name, dependencies
 
 # Routing
 module.config ($locationProvider) ->
@@ -19,4 +19,4 @@ module.config ($locationProvider) ->
 
 # Entry point
 module.run (titleService) ->
-  titleService.setSuffix " | MyApplication"
+  titleService.setSuffix " | #{window.CURVE_APP.name}"
