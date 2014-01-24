@@ -107,7 +107,7 @@ runs on file change.
 
 ### `grunt build`
 
-Build the app in production mode (compile + minified + uglified)
+Build the app in production mode (compiled + minified + uglified)
 
 ### `grunt clean`
 
