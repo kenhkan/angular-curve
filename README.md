@@ -54,10 +54,22 @@ to continue.  And then:
    generate documentation for you, docco-style: `pip pygments`
 4. Get NPM deps: `npm install`
 5. Get Bower deps: `bower install`
-6. In `app/assets/index.html`, configure the app by specifying your app name,
-   base URL, etc. This file is the entry point. Add any static references here
-   and a copy of which will be produced upon building to `404.html` to ensure
-   not-found errors are catched by AngularJS.
+6. In `app/assets/index.html`, remember to configure your project by playing
+   around with the `window.CURVE_APP` global variable.
+
+
+## Configuration
+
+Configuration is done via the `window.CURVE_APP` global object. Available
+configuration:
+
+* `name`: The application name that will be registered with Angular. Use this
+  other than hard-coding your application name as that saves you from having to
+  go into the loader and hard-code the name there.
+* `base`: This is the base URL to load the rest of the assets. Default to the
+  current domain
+* `element`: This is the root element that the loader will bootstrap on.
+  Default to the `document.body` element
 
 
 ## Usage
@@ -120,19 +132,17 @@ Release a new version. It does a few things:
 After having set up the project, the file structure would look like:
 
     app/ -> Anything specific to the app goes here
-    app/assets/ -> Anything here is copied over to top-level directory as-is.
-    app/assets/index.html -> The entry point index page
-    app/assets/config.js -> This script is executed before AngularJS is loaded
-    app/assets/init.js -> This is the script that loads the application
+    app/assets/ -> Anything here is copied over to top-level directory as-is
+    app/assets/index.html -> The index page
     app/assets/loader.js -> This is the bootstrapper that starts it all
-    app/common/ -> Included before everything else in `app/`
-    app/application.coffee -> The top-level ApplicationController
-    app/application.spec.coffee -> Test cases for ApplicationController
-    app/index.coffee -> The main entry point, where module definition takes place
+    app/common/ -> Run before everything else in `app/`
+    app/application.coffee -> The top-level controller
+    app/application.spec.coffee -> Sample test cases for ApplicationController
+    app/index.coffee -> The entry point, where module definition takes place
     bower_compoennts/ -> Downloaded Bower components
     etc/karma.conf.coffee -> The Karma configuration file
     node_modules/ -> downloaded NPM modules
-    public/ -> The built code lives here
+    public/ -> The built files lives here
     bower.json -> Bower dependency declaration
     Gruntfile.coffee -> Gruntfile configuration
     LICENSE -> Pretty self-explanatory
@@ -142,28 +152,24 @@ After having set up the project, the file structure would look like:
 
 ## Bootstrapping order
 
-This application lazy loads everything necessary. Here's what it does to
-bootstrap the application:
+angular-curve loads everything asynchronously. Here's what it does to bootstrap
+the application:
 
-1. `index.html` sets all the required parameters specific to the app
-2. `loader.js` then sets forth basic bootstrapping parameters like the base
-   URL, make the [LazyLoad](https://github.com/rgrove/lazyload) library available,
-   and load `init.js` lazily
-3. `init.js` sets more parameters and loads `vendor.js`, `templates.js`,
-   `config.js`, and `app.js`, in that order
-4. `vendor.js`, `templates.js`, and `app.js` are compiled scripts from the
-   source and `config.js` is a custom script in `app/assets/` to allow
-   configuration before the application loads.
-5. AngularJS then bootstraps the application on the provided base element,
-   default to the body
-6. At this point, AngularJS has control and `index.coffee` is run, then
+1. `index.html` sets all the required parameters specific to the app (via
+   `window.CURVE_APP`, see the [Configuration](#configuration) section)
+2. `loader.js` then fill in the blanks for parameters that are not provided
+   values; then make the [LazyLoad](https://github.com/rgrove/lazyload) library
+   available; then loads all the style and script files
+3. AngularJS then bootstraps the application on the base element, default to
+   `document.body`
+4. At this point, Angular has control and `index.coffee` is run, then
    `application.coffee` and so forth
 
 
 ## Supported file types
 
 Anything found in the Brunch plugin ecosystem is supported! By default this
-repo supports:
+application supports:
 
 * CSS/JS: `.css`, `.js` (duh!)
 * CoffeeScript: `.coffee`
@@ -188,14 +194,16 @@ Under the `app` directory:
   compiled into the file `public/spec.js`
 * Style files are compiled into one CSS file `public/app.css`
 * Markup files are compiled into one template-containing JavaScript file
-  `public/templates.js`
+  `public/templates.js`. Templates are prepended to `public/app.js` for
+  production to save a roundtrip to the server. It does not do so in
+  development mode because it would break the source map generated by Brunch.
 * Do _NOT_ name README as `README.md`. _Always_ name it as just `README`
   because `*.md` are compiled into the templates by the Brunch engine.
 
 
 ## Package management
 
-Because developing in Angular.js requires many external libraries, package
+Because developing in Angular requires many external libraries, package
 management should be automated using [Bower](http://bower.io/). Follow these
 steps:
 
@@ -206,7 +214,7 @@ steps:
 ### In Development
 
 Remember that Bower provides a powerful `bower link` facility. If you are
-including on another Bower-enabled repo, simply run `bower link` in that repo's
+including another Bower-enabled repo, simply run `bower link` in that repo's
 root directory and then `bower link <nameAsInBowerJsonHere>` in the dependent
 directory. Locally linked repos greatly simplify the development process.
 
@@ -227,7 +235,7 @@ Source maps of the compiled files are available in development mode.
   [sass-brunch](https://github.com/brunch/sass-brunch#options) for more info
 * [Docker](http://jbt.github.io/docker/): generate documentation on build. Note
   that Docker only recognizes JSDoc declaration when it's in a block-style
-  comment (i.e. `/* ... */`)
+  comment (i.e. `/* ... */` in JavaScript and `### ... ###` in CoffeeScript)
 * [autoprefixer](https://github.com/lydell/autoprefixer): uses [Can I
   use](http://caniuse.com) to autoprefix your CSS
 
