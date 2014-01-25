@@ -12,7 +12,7 @@ module.exports = (config) ->
     files: [
       'public/loader.js'
       'public/vendor.js'
-      'public/vendor_test.js'
+      'public/_dev/test.js'
       'public/templates.js'
       'public/app.js'
       'public/spec.js'

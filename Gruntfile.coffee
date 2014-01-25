@@ -46,12 +46,11 @@ module.exports = (grunt) ->
 
     # Clean house
     clean:
-      build: [
-        BUILD_DIR
-        "#{SOURCE_DIR}/assets/index.jade"
+      build: [BUILD_DIR]
+      excess: [
+        "#{BUILD_DIR}/spec.js"
+        "#{BUILD_DIR}/_dev/"
       ]
-      index: ["#{BUILD_DIR}/index.html"]
-      spec: ["#{BUILD_DIR}/spec.js"]
 
     # Testing
     karma:
@@ -124,7 +123,6 @@ module.exports = (grunt) ->
     'clean'
     'brunch:watch'
     'copy:404'
-    'clean:index'
   ]
 
   # JUST compile, nothing else
@@ -132,7 +130,6 @@ module.exports = (grunt) ->
     'clean'
     'brunch:compile'
     'copy:404'
-    'clean:index'
   ]
 
   # Build -- minify and uglify
@@ -140,8 +137,7 @@ module.exports = (grunt) ->
     'clean'
     'brunch:build'
     'copy:404'
-    'clean:index'
-    'clean:spec'
+    'clean:excess'
   ]
 
   # Simply compile on heroku
