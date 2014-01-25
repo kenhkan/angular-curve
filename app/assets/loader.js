@@ -1,7 +1,6 @@
 'use strict';
 
-// What do you mean we don't have a configuration
-// object? Then make one!
+// What do you mean we don't have a configuration object? Then make one!
 window.CURVE_APP = window.CURVE_APP || {
   name: 'Application'
 };

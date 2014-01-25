@@ -14,10 +14,20 @@
   ],
   "dependencies": {
     "angular": "~1.2.0",
-    "lazy.js": "~0.3.2"
-  },
-  "devDependencies": {
+    "lazy.js": "~0.3.2",
     "angular-mocks": "~1.2.0",
     "console-polyfill": "~0.1.0"
+  },
+  "curve": {
+    "javascripts": {
+      "splitTo": {
+        "vendor_dev": [
+          "bower_components/console-polyfill/index.js"
+        ],
+        "vendor_test": [
+          "bower_components/angular-mocks/angular-mocks.js"
+        ]
+      }
+    }
   }
 }

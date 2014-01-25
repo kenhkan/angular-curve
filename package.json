@@ -23,13 +23,11 @@
   "dependencies": {
     "auto-reload-brunch": "~1.7.1",
     "bower": "~1.2.7",
-    "brunch": "1.7.10",
     "clean-css-brunch": "~1.7.1",
     "coffee-script-brunch": "~1.7.3",
     "coffeelint-brunch": "~1.5.0",
     "css-brunch": "~1.7.0",
     "eco-brunch": "~1.7.1",
-    "glob": "~3.2.7",
     "grunt": "~0.4.2",
     "grunt-cli": "~0.1.11",
     "grunt-brunch": "0.0.1",
@@ -57,6 +55,9 @@
     "autoprefixer-brunch": "1.7.3",
     "http-server": "~0.6.1",
     "concat-brunch": "~0.0.0",
-    "appcache-brunch": "~1.7.1"
+    "appcache-brunch": "~1.7.1",
+    "karma-coverage": "~0.1.4",
+    "brunch": "~1.7.13",
+    "lazy.js": "~0.3.2"
   }
 }
