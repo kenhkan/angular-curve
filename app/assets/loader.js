@@ -45,7 +45,6 @@ window.setTimeout(function() {
     // Load all the scripts
     window.LazyLoad.js([
       curve.base + '/vendor.js',
-      curve.base + '/templates.js',
       curve.base + '/app.js'
     ], function() {
       // We have loaded

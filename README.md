@@ -186,6 +186,10 @@ Search on NPM with `yourDesiredFileTypeHere brunch` for the correct NPM module.
 Or visit the [plugin directory](https://github.com/brunch/brunch/wiki/Plugins)
 to hunt for your gems!
 
+If you add a new template preprocessor, remember to add the relevant extensions
+to `curve.templates.extensions` in `bower.json` as angular-curve needs to know
+which files are templates to prepend `app.js`.
+
 Under the `app` directory:
 
 * Script files are compiled into one JavaScript file, `public/app.js`

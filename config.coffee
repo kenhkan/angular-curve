@@ -3,6 +3,8 @@ Lazy = require 'lazy.js'
 
 # The `bower.json` config file
 bower = require './bower'
+# Acceptable template extensions
+TEMPLATE_EXTENSIONS = bower.curve.templates.extensions
 
 # See docs at https://github.com/brunch/brunch/blob/stable/docs/config.md
 exports.config =
@@ -27,12 +29,16 @@ exports.config =
         # Vendor code
         'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
-        before: [
+        before: (glob.sync(
+          # Templates first
+          "app/**/*.+(#{TEMPLATE_EXTENSIONS})"
+
+        )).concat([
           # Essential libraries
           'bower_components/lazy.js/lazy.js'
           'bower_components/angular/angular.js'
 
-        ].concat(glob.sync(
+        ]).concat(glob.sync(
           # Library files first
           'bower_components/**/*.js'
 
