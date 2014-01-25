@@ -54,7 +54,6 @@
     "ngmin-uglify-js-brunch": "~1.7.2",
     "autoprefixer-brunch": "1.7.3",
     "http-server": "~0.6.1",
-    "concat-brunch": "~0.0.0",
     "appcache-brunch": "~1.7.1",
     "brunch": "~1.7.13",
     "lazy.js": "~0.3.2",

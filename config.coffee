@@ -56,7 +56,7 @@ exports.config =
 
     templates:
       joinTo:
-        'templates.js': /^app/
+        'app.js': /^app/
 
   plugins:
     coffeescript:
