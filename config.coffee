@@ -1,3 +1,4 @@
+glob = require 'glob'
 Lazy = require 'lazy.js'
 
 # The `bower.json` config file
@@ -30,15 +31,23 @@ exports.config =
           # Essential libraries
           'bower_components/lazy.js/lazy.js'
           'bower_components/angular/angular.js'
+
+        ].concat(glob.sync(
           # Library files first
           'bower_components/**/*.js'
+
+        )).concat(glob.sync(
           # Main entry point
           'app/index.*'
+
+        )).concat(glob.sync(
           # Individual entry points
           'app/**/index.*'
+
+        )).concat(glob.sync(
           # Project-specific shared libraries
           'app/common/**/*'
-        ]
+        ))
 
     stylesheets:
       joinTo:
