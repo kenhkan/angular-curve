@@ -5,6 +5,26 @@ window.CURVE_APP = window.CURVE_APP || {
   name: 'Application'
 };
 
+
+// Determine under what environment we are at run-time
+
+// If it's manually set, all is good
+if (window.CURVE_APP.environment !== void 0) {
+
+// If it's on localhost, it's obviously development
+} else if (window.location.hostname === 'localhost') {
+  window.CURVE_APP.environment = 'development'
+
+// If there is the slightest hint it's in staging, let it be
+} else if (window.location.hostname.indexOf('staging') > -1) {
+  window.CURVE_APP.environment = 'staging'
+
+// Otherwise, it's in production
+} else {
+  window.CURVE_APP.environment = 'production'
+}
+
+
 // Don't block. Load on next cycle.
 window.setTimeout(function() {
   // Make a shortcut to the configuration object
@@ -53,6 +73,7 @@ window.setTimeout(function() {
       angular.bootstrap(curve.element, [curve.name]);
     });
   }
+
 
   // Use LazyLoad
   var lazyLoad = document.createElement('script');
