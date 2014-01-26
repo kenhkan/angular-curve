@@ -58,14 +58,14 @@ window.setTimeout(function() {
 
     // Load all the styles
     window.LazyLoad.css([
-      curve.base + '/vendor.css',
-      curve.base + '/app.css'
+      curve.base + 'vendor.css',
+      curve.base + 'app.css'
     ]);
 
     // Load all the scripts
     window.LazyLoad.js([
-      curve.base + '/vendor.js',
-      curve.base + '/app.js'
+      curve.base + 'vendor.js',
+      curve.base + 'app.js'
     ], function() {
       // We have loaded
       curve._hasLoaded = true;
