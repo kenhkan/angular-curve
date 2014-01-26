@@ -109,8 +109,8 @@ runs on file change.
 
 Build the app in production mode (compiled + minified + uglified). When
 building, everything under `public/_dev` directory will be removed, so
-non-production code (e.g. testing setup code) that has been built to a file
-under `public/_dev` would live happily there.
+non-production code (e.g. testing setup code) would live happily in
+`public/_dev`.
 
 ### `grunt clean`
 
