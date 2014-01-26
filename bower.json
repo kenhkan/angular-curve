@@ -21,7 +21,7 @@
     },
     "javascripts": {
       "splitTo": {
-        "_dev/test": [
+        "_dev/test_lib": [
           "bower_components/angular-mocks/angular-mocks.js"
         ]
       }

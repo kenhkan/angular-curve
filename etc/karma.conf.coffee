@@ -12,10 +12,9 @@ module.exports = (config) ->
     files: [
       'public/loader.js'
       'public/vendor.js'
-      'public/_dev/test.js'
-      'public/templates.js'
+      'public/_dev/test_lib.js'
       'public/app.js'
-      'public/spec.js'
+      'public/_dev/spec.js'
     ]
 
     # Files to preprocess before testing

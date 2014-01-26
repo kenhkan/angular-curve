@@ -25,7 +25,7 @@ exports.config =
         # Non-spec scripts are application code
         'app.js': /^app\/(?!.+\.spec\.)/
         # Specs are compiled into another file by themselves
-        'spec.js': /^app\/.+\.spec\./
+        '_dev/spec.js': /^app\/.+\.spec\./
         # Vendor code
         'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
@@ -68,6 +68,9 @@ exports.config =
     coffeescript:
       # Auto-wrap in self-calling function
       bare: false
+
+    appcache:
+      ignore: /_dev/
 
 
 # Process the JavaScript `joinTo` object to separate out user-defined `splitTo`
