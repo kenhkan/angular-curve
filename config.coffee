@@ -69,15 +69,6 @@ exports.config =
       # Auto-wrap in self-calling function
       bare: false
 
-    concat:
-      files:
-        # For production templates should be merged into `app.js` as there is
-        # no need for source maps to work
-        'public/app.js':
-          sources: ['public/templates.js', 'public/app.js']
-          toRemove: true
-          productionOnly: true
-
 
 # Process the JavaScript `joinTo` object to separate out user-defined `splitTo`
 # files (defined in `bower.json`)
