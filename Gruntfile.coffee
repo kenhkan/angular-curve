@@ -28,10 +28,10 @@ module.exports = (grunt) ->
       options:
         files: ['package.json', 'bower.json']
         commit: true
-        commitMessage: 'chore(release): v%VERSION%'
+        commitMessage: 'chore(release): version %VERSION%'
         commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md']
         createTag: true
-        tagName: 'v%VERSION%'
+        tagName: '%VERSION%'
         tagMessage: 'Version %VERSION%'
         push: true
         pushTo: 'origin'
