@@ -21,10 +21,10 @@
     },
     "javascripts": {
       "order": {
-        "before": {
+        "before": [
           "bower_components/lazy.js/lazy.js",
           "bower_components/angular/angular.js"
-        }
+        ]
       },
       "splitTo": {
         "_dev/test_lib": [
