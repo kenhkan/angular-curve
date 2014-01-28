@@ -20,6 +20,12 @@
       "extensions": "html|hbs|eco|jade"
     },
     "javascripts": {
+      "order": {
+        "before": {
+          "bower_components/lazy.js/lazy.js",
+          "bower_components/angular/angular.js"
+        }
+      },
       "splitTo": {
         "_dev/test_lib": [
           "bower_components/angular-mocks/angular-mocks.js"

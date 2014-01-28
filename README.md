@@ -216,14 +216,23 @@ the object `splitTo` with the value being an array of files to build to the
 specified output file. angular-curve will exclude these files from any of the
 normal output files: `app.js` and `vendor.js`.
 
+A `before` and `after` may be used in an `order` attribute. Files at the paths
+specified in those two attributes are placed either before or after the rest of
+the script files.
+
 The following configuration would put the content of
-`app/somewhere/called/home.js` and `app/welcome.js` into `public/local.js` and
-`app/where/am/i.js` into `public/remote.js`.
+`app/somewhere/called/home.js` and `app/welcome.js` (this first) into
+`public/local.js` and `app/where/am/i.js` into `public/remote.js`.
 
 ```
   ...
   "curve": {
     "javascripts": {
+      "order": {
+        "before": {
+          "app/welcome.js"
+        }
+      },
       "splitTo": {
         "local": [
           "app/somewhere/called/home.js",

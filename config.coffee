@@ -29,16 +29,17 @@ exports.config =
         # Vendor code
         'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
+        after: bower.curve.javascripts.after or []
+
         before: (glob.sync(
           # Templates first
           "app/**/*.+(#{TEMPLATE_EXTENSIONS})"
 
-        )).concat([
-          # Essential libraries
-          'bower_components/lazy.js/lazy.js'
-          'bower_components/angular/angular.js'
+        )).concat(
+          # Essential libraries to load before the rest
+          bower.curve.javascripts.before or []
 
-        ]).concat(glob.sync(
+        ).concat(glob.sync(
           # Library files first
           'bower_components/**/*.js'
 
