@@ -29,7 +29,7 @@ exports.config =
         # Vendor code
         'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
-        after: bower.curve.javascripts.after or []
+        after: bower.curve.javascripts.order.after or []
 
         before: (glob.sync(
           # Templates first
@@ -37,7 +37,7 @@ exports.config =
 
         )).concat(
           # Essential libraries to load before the rest
-          bower.curve.javascripts.before or []
+          bower.curve.javascripts.order.before or []
 
         ).concat(glob.sync(
           # Library files first
