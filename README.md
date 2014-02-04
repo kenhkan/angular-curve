@@ -50,11 +50,12 @@ to continue.  And then:
 
 1. I assume you have [Node.js/NPM](http://nodejs.org/)
 2. You need [Grunt](http://gruntjs.com/): `npm install -g grunt-cli`
-3. Install Pygments so that [Docker](https://github.com/jbt/docker) can
+3. You also need Bower: `npm install -g bower`
+4. Install Pygments so that [Docker](https://github.com/jbt/docker) can
    generate documentation for you, docco-style: `pip install pygments`
-4. Get NPM deps: `npm install`
-5. Get Bower deps: `bower install`
-6. In `app/assets/index.html`, remember to configure your project by playing
+5. Get NPM deps: `npm install`
+6. Get Bower deps: `bower install`
+7. In `app/assets/index.html`, remember to configure your project by playing
    around with the `window.CURVE_APP` global variable.
 
 
