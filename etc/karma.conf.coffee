@@ -10,9 +10,10 @@ module.exports = (config) ->
 
     # Load the entire thing
     files: [
-      'public/loader.js'
       'public/vendor.js'
+      'public/loader.js'
       'public/_dev/test_lib.js'
+      'public/_dev/test_setup.js'
       'public/app.js'
       'public/_dev/spec.js'
     ]
