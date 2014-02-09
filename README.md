@@ -66,7 +66,9 @@ configuration:
 
 * `name`: The application name that will be registered with Angular. Use this
   other than hard-coding your application name as that saves you from having to
-  go into the loader and hard-code the name there.
+  go into the loader and hard-code the name there. When changing the name in
+  `index.html`, you must also change it in `app/assets/_dev/test_setup.js` so
+  that Karma has the same configuration as in normal environment.
 * `base`: This is the base URL to load the rest of the assets. Default to the
   current domain
 * `element`: This is the root element that the loader will bootstrap on.
