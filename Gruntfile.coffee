@@ -17,6 +17,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-docker'
   grunt.loadNpmTasks 'grunt-shell-spawn'
   grunt.loadNpmTasks 'grunt-brunch'
+  grunt.loadNpmTasks 'grunt-s3'
 
   # Configuration
   grunt.initConfig
@@ -86,6 +87,26 @@ module.exports = (grunt) ->
       build:
         action: 'build'
 
+    # AWS S3
+    s3Config: grunt.file.readJSON 'etc/s3.json'
+    s3:
+      options:
+        key: '<%= s3Config.key %>'
+        secret: '<%= s3Config.secret %>'
+        bucket: '<%= s3Config.bucket %>'
+        access: 'public-read'
+        verify: true
+      production:
+        sync: [
+          {
+            # Take the built files...
+            src: 'public/**/*'
+            # Put at the root of the specified bucket
+            dest: ''
+            rel: 'public'
+          }
+        ]
+
     # Execute arbitrary commands
     shell:
       options:
@@ -139,6 +160,13 @@ module.exports = (grunt) ->
     'copy:404'
     'clean:excess'
   ]
+
+  # Push -- build and push to production on S3
+  grunt.registerTask 'push', (target) ->
+    return unless target?
+
+    # Build app and run on target
+    grunt.task.run ['build', target]
 
   # Simply compile on heroku
   grunt.registerTask 'heroku', ['compile']

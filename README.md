@@ -119,6 +119,14 @@ non-production code (e.g. testing setup code) would live happily in
 
 This resets the project to its pristine state.
 
+### `grunt push:target`
+
+Build the project and push to a remote server.
+
+Sub-commands:
+
+* `grunt push:s3` pushes to S3
+
 ### `grunt release`
 
 Release a new version. It does a few things:

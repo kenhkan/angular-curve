@@ -57,6 +57,7 @@
     "appcache-brunch": "~1.7.1",
     "brunch": "~1.7.13",
     "lazy.js": "~0.3.2",
-    "glob": "~3.2.8"
+    "glob": "~3.2.8",
+    "grunt-s3": "~0.2.0-alpha.3"
   }
 }
