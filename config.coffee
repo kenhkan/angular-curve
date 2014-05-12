@@ -11,6 +11,9 @@ exports.config =
   conventions:
     assets: /^app\/assets\//
 
+  paths:
+    watched: ['app', 'components']
+
   # We use AngularJS' own DI mechanism
   modules:
     definition: false
@@ -22,18 +25,18 @@ exports.config =
   files:
     javascripts:
       joinTo:
-        # Non-spec scripts are application code
-        'app.js': /^app\/(?!.+\.spec\.)/
+        # Non-spec and compoennt scripts are application code
+        'app.js': /^(app|components)\/(?!.+\.spec\.)/
         # Specs are compiled into another file by themselves
-        '_dev/spec.js': /^app\/.+\.spec\./
+        '_dev/spec.js': /^(app|components)\/(?!.+\.spec\.)/
         # Vendor code
         'vendor.js': /^(bower_components)\/(?!.+\.spec\.)/
       order:
         after: bower.curve.javascripts.order.after or []
 
         before: (glob.sync(
-          # Templates first
-          "app/**/*.+(#{TEMPLATE_EXTENSIONS})"
+          # Templates first as they have no dependency whatsoever
+          "+(app|components)/**/*.+(#{TEMPLATE_EXTENSIONS})"
 
         )).concat(
           # Essential libraries to load before the rest
@@ -42,6 +45,14 @@ exports.config =
         ).concat(glob.sync(
           # Library files first
           'bower_components/**/*.js'
+
+        )).concat(glob.sync(
+          # Module entry points
+          'components/**/index.*'
+
+        )).concat(glob.sync(
+          # Modules
+          'components/**/*'
 
         )).concat(glob.sync(
           # Main entry point
@@ -54,16 +65,17 @@ exports.config =
         )).concat(glob.sync(
           # Project-specific shared libraries
           'app/common/**/*'
+
         ))
 
     stylesheets:
       joinTo:
-        'app.css': /^app/
+        'app.css': /^(app|components)/
         'vendor.css': /^(bower_components)/
 
     templates:
       joinTo:
-        'app.js': /^app/
+        'app.js': /^(app|components)/
 
   plugins:
     coffeescript:
