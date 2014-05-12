@@ -27,6 +27,7 @@ you're set.
 * [Docco](http://jashkenas.github.io/docco/)-style documentation that expects
   [JSDoc](http://usejsdoc.org/)
 * [Bower](http://bower.io/)-powered package management
+* [Component.io](http://component.io/) for modularity with private repositories
 * Dead-easy, drop-in support of your favorite preprocessors and tools with
   [Brunch](http://brunch.io/). See [supported file types](#supportedfiletypes)
   for more info
