@@ -34,8 +34,7 @@ module.exports = (grunt) ->
         createTag: true
         tagName: '%VERSION%'
         tagMessage: 'Version %VERSION%'
-        push: true
-        pushTo: 'origin'
+        push: false
 
     # Documentation
     docker:
