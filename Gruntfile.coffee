@@ -1,3 +1,5 @@
+fs = require 'fs'
+
 module.exports = (grunt) ->
   # Paths
   SOURCE_DIR = 'app'
@@ -87,7 +89,10 @@ module.exports = (grunt) ->
         action: 'build'
 
     # AWS S3
-    s3Config: grunt.file.readJSON 'etc/s3.json'
+    s3Config: if fs.existsSync 'etc/s3.json'
+        grunt.file.readJSON 'etc/s3.json'
+      else
+        {}
     s3:
       options:
         key: '<%= s3Config.key %>'
